@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的声明</title>
+  <meta name="description" content="我的声明" />
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-strong: #ffffff;
+      --text: #111111;
+      --muted: #6e6e73;
+      --line: rgba(17, 17, 17, 0.08);
+      --accent: #0071e3;
+      --accent-soft: rgba(0, 113, 227, 0.1);
+      --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "SF Pro Display",
+        "SF Pro Text",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Noto Sans SC",
+        "Microsoft YaHei",
+        sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 113, 227, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 167, 38, 0.12), transparent 26%),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 16px auto 0;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 12px 28px rgba(17, 17, 17, 0.05);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .lang-switch {
+      margin-left: auto;
+      display: inline-flex;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .lang-btn.is-active {
+      background: white;
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .main {
+      padding: 40px 16px 80px;
+    }
+
+    .section {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 60px 0 40px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 32px;
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: #fafafa;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .metric {
+      background: white;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+    }
+
+    .metric-value {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .content-card {
+      background: white;
+      padding: 48px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .content-kicker {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .content-title {
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 0 0 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .claims {
+      display: grid;
+      gap: 32px;
+    }
+
+    .claim {
+      padding-left: 20px;
+      border-left: 2px solid var(--line);
+    }
+
+    .claim h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .claim p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .case-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .case-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .case-body {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .case-body p {
+      margin: 0 0 16px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: white;
+      border: 2px solid var(--accent);
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .timeline-body {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .content-card {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand" data-i18n="brand">我的声明</div>
+      <nav class="nav">
+        <a href="#overview" data-i18n="navOverview">概览</a>
+        <a href="#cases" data-i18n="navCases">核心事项</a>
+        <a href="#timeline" data-i18n="navTimeline">时间线</a>
+        <a href="#closing" data-i18n="navClosing">结语</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section hero" id="overview">
+        <div class="eyebrow" data-i18n="eyebrow">事件声明</div>
+        <h1 data-i18n="heroTitle">用事实还原真相</h1>
+        <p data-i18n="heroText">本页面将逐条澄清事实，还原事件真相。</p>
+        <div class="hero-actions">
+          <a href="#cases" class="btn btn-primary" data-i18n="heroPrimary">查看核心事项</a>
+          <a href="#timeline" class="btn btn-secondary" data-i18n="heroSecondary">查看时间线</a>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-value" data-i18n="metricValue1">3</div>
+            <div class="metric-label" data-i18n="metricLabel1">核心事项</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" data-i18n="metricValue2">5</div>
+            <div class="metric-label" data-i18n="metricLabel2">时间节点</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" data-i18n="metricValue3">2</div>
+            <div class="metric-label" data-i18n="metricLabel3">语言</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview-content">
+        <article class="content-card">
+          <div class="content-kicker" data-i18n="overviewKicker">概览</div>
+          <h2 class="content-title" data-i18n="overviewTitle">这里填写概览标题</h2>
+          <div class="claims">
+            <div class="claim">
+              <h3 data-i18n="claim1Title">我是谁？</h3>
+              <p data-i18n="claim1Body">这里介绍你自己。</p>
+            </div>
+            <div class="claim">
+              <h3 data-i18n="claim2Title">发生了什么？</h3>
+              <p data-i18n="claim2Body">这里描述发生的事情。</p>
+            </div>
+            <div class="claim">
+              <h3 data-i18n="claim3Title">我在做什么？</h3>
+              <p data-i18n="claim3Body">这里描述你正在做的事情。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="cases">
+        <article class="content-card">
+          <div class="content-kicker" data-i18n="casesKicker">核心事项</div>
+          <h2 class="content-title" data-i18n="casesTitle">逐条澄清事实</h2>
+
+          <div class="case">
+            <div class="case-number">01</div>
+            <h3 class="case-title" data-i18n="case1Title">第一个事项标题</h3>
+            <div class="case-body">
+              <p data-i18n="case1Point1">这里写内容。</p>
+              <p data-i18n="case1Point2">继续补充。</p>
+            </div>
+          </div>
+
+          <div style="height: 40px;"></div>
+
+          <div class="case">
+            <div class="case-number">02</div>
+            <h3 class="case-title" data-i18n="case2Title">第二个事项标题</h3>
+            <div class="case-body">
+              <p data-i18n="case2Point1">这里写内容。</p>
+              <p data-i18n="case2Point2">继续补充。</p>
+            </div>
+          </div>
+
+          <div style="height: 40px;"></div>
+
+          <div class="case">
+            <div class="case-number">03</div>
+            <h3 class="case-title" data-i18n="case3Title">第三个事项标题</h3>
+            <div class="case-body">
+              <p data-i18n="case3Point1">这里写内容。</p>
+              <p data-i18n="case3Point2">继续补充。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="timeline">
+        <article class="content-card">
+          <div class="content-kicker" data-i18n="timelineKicker">时间线</div>
+          <h2 class="content-title" data-i18n="timelineTitle">事件时间线</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2026-01-01</div>
+              <h3 class="timeline-title" data-i18n="t1Title">第一个时间点</h3>
+              <p class="timeline-body" data-i18n="t1Body">描述发生了什么。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2026-02-01</div>
+              <h3 class="timeline-title" data-i18n="t2Title">第二个时间点</h3>
+              <p class="timeline-body" data-i18n="t2Body">描述发生了什么。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2026-03-01</div>
+              <h3 class="timeline-title" data-i18n="t3Title">第三个时间点</h3>
+              <p class="timeline-body" data-i18n="t3Body">描述发生了什么。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2026-04-01</div>
+              <h3 class="timeline-title" data-i18n="t4Title">第四个时间点</h3>
+              <p class="timeline-body" data-i18n="t4Body">描述发生了什么。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2026-04-19</div>
+              <h3 class="timeline-title" data-i18n="t5Title">第五个时间点</h3>
+              <p class="timeline-body" data-i18n="t5Body">描述发生了什么。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="closing">
+        <article class="content-card">
+          <div class="content-kicker" data-i18n="closingKicker">结语</div>
+          <h2 class="content-title" data-i18n="closingTitle">结语标题</h2>
+          <p style="color: var(--muted); line-height: 1.8; font-size: 18px;" data-i18n="closingBody">
+            这里写结语内容。
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footer">© 2026 我的声明</p>
+    </footer>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        brand: "我的声明",
+        navOverview: "概览",
+        navCases: "核心事项",
+        navTimeline: "时间线",
+        navClosing: "结语",
+        eyebrow: "事件声明",
+        heroTitle: "用事实还原真相",
+        heroText: "本页面将逐条澄清事实，还原事件真相。",
+        heroPrimary: "查看核心事项",
+        heroSecondary: "查看时间线",
+        metricLabel1: "核心事项",
+        metricLabel2: "时间节点",
+        metricLabel3: "语言",
+        metricValue1: "3",
+        metricValue2: "5",
+        metricValue3: "2",
+        overviewKicker: "概览",
+        overviewTitle: "这里填写概览标题",
+        claim1Title: "我是谁？",
+        claim1Body: "这里介绍你自己。",
+        claim2Title: "发生了什么？",
+        claim2Body: "这里描述发生的事情。",
+        claim3Title: "我在做什么？",
+        claim3Body: "这里描述你正在做的事情。",
+        casesKicker: "核心事项",
+        casesTitle: "逐条澄清事实",
+        case1Title: "第一个事项标题",
+        case1Point1: "这里写内容。",
+        case1Point2: "继续补充。",
+        case2Title: "第二个事项标题",
+        case2Point1: "这里写内容。",
+        case2Point2: "继续补充。",
+        case3Title: "第三个事项标题",
+        case3Point1: "这里写内容。",
+        case3Point2: "继续补充。",
+        timelineKicker: "时间线",
+        timelineTitle: "事件时间线",
+        t1Title: "第一个时间点",
+        t1Body: "描述发生了什么。",
+        t2Title: "第二个时间点",
+        t2Body: "描述发生了什么。",
+        t3Title: "第三个时间点",
+        t3Body: "描述发生了什么。",
+        t4Title: "第四个时间点",
+        t4Body: "描述发生了什么。",
+        t5Title: "第五个时间点",
+        t5Body: "描述发生了什么。",
+        closingKicker: "结语",
+        closingTitle: "结语标题",
+        closingBody: "这里写结语内容。",
+        footer: "© 2026 我的声明"
+      },
+      en: {
+        brand: "My Statement",
+        navOverview: "Overview",
+        navCases: "Key Issues",
+        navTimeline: "Timeline",
+        closing: "Closing",
+        eyebrow: "Event Statement",
+        heroTitle: "Setting the Record Straight",
+        heroText: "This page clarifies the facts one by one to reveal the truth.",
+        heroPrimary: "View Key Issues",
+        heroSecondary: "View Timeline",
+        metricLabel1: "Key Issues",
+        metricLabel2: "Timeline Points",
+        metricLabel3: "Languages",
+        metricValue1: "3",
+        metricValue2: "5",
+        metricValue3: "2",
+        overviewKicker: "Overview",
+        overviewTitle: "Overview Title Here",
+        claim1Title: "Who am I?",
+        claim1Body: "Introduce yourself here.",
+        claim2Title: "What happened?",
+        claim2Body: "Describe what happened here.",
+        claim3Title: "What am I doing?",
+        claim3Body: "Describe what you're doing here.",
+        casesKicker: "Key Issues",
+        casesTitle: "Clarifying the Facts One by One",
+        case1Title: "First Issue Title",
+        case1Point1: "Write content here.",
+        case1Point2: "Continue adding.",
+        case2Title: "Second Issue Title",
+        case2Point1: "Write content here.",
+        case2Point2: "Continue adding.",
+        case3Title: "Third Issue Title",
+        case3Point1: "Write content here.",
+        case3Point2: "Continue adding.",
+        timelineKicker: "Timeline",
+        timelineTitle: "Event Timeline",
+        t1Title: "First Timeline Point",
+        t1Body: "Describe what happened.",
+        t2Title: "Second Timeline Point",
+        t2Body: "Describe what happened.",
+        t3Title: "Third Timeline Point",
+        t3Body: "Describe what happened.",
+        t4Title: "Fourth Timeline Point",
+        t4Body: "Describe what happened.",
+        t5Title: "Fifth Timeline Point",
+        t5Body: "Describe what happened.",
+        closingKicker: "Closing",
+        closingTitle: "Closing Title",
+        closingBody: "Write your closing content here.",
+        footer: "© 2026 My Statement"
+      }
+    };
+
+    const elements = document.querySelectorAll("[data-i18n]");
+    const buttons = document.querySelectorAll(".lang-btn");
+    const preferredLang = localStorage.getItem("site-lang") || "zh";
+
+    function applyLanguage(lang) {
+      const messages = translations[lang] || translations.zh;
+      document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      document.body.classList.toggle("lang-en", lang === "en");
+
+      elements.forEach((element) => {
+        const key = element.dataset.i18n;
+        if (messages[key]) {
+          element.textContent = messages[key];
+        }
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.lang === lang);
+      });
+
+      localStorage.setItem("site-lang", lang);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+
+    applyLanguage(preferredLang);
+    window.requestAnimationFrame(() => {
+      document.body.classList.add("is-ready");
+    });
+  </script>
+</body>
+</html>

@@ -59,23 +59,10 @@
       color: var(--muted); font-size: 14px;
     }
 
-    .lang-switch {
-      margin-left: auto;
-      display: inline-flex; padding: 4px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.05);
-    }
-
-    .lang-btn {
-      border: none; background: transparent;
-      padding: 6px 12px; border-radius: 999px;
-      font-size: 13px; cursor: pointer;
-      color: var(--muted); transition: all 0.2s;
-    }
-
-    .lang-btn.is-active {
-      background: white; color: var(--text);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    .contact-badge {
+      background: var(--accent); color: white;
+      padding: 8px 16px; border-radius: 999px;
+      font-size: 13px; font-weight: 600;
     }
 
     .main { padding: 40px 16px 80px; }
@@ -115,7 +102,7 @@
     .btn-secondary:hover { background: #fafafa; }
 
     .metrics {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px; margin-top: 48px;
     }
 
@@ -160,6 +147,29 @@
     .case-title { font-size: 20px; font-weight: 600; margin: 0 0 20px; line-height: 1.4; }
     .case-body { color: var(--muted); line-height: 1.8; }
     .case-body p { margin: 0 0 16px; }
+    .case-body strong { color: var(--text); }
+
+    .warning-box {
+      background: #fff3cd; border: 1px solid #ffc107;
+      border-radius: var(--radius-lg); padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .warning-box h4 { margin: 0 0 12px; color: #856404; }
+    .warning-box p { margin: 0; color: #856404; line-height: 1.7; }
+
+    .contact-card {
+      background: var(--accent-soft); border: 1px solid var(--accent);
+      border-radius: var(--radius-lg); padding: 32px;
+      text-align: center;
+    }
+
+    .contact-card h3 { margin: 0 0 16px; font-size: 24px; }
+    .contact-card p { margin: 0 0 20px; color: var(--muted); line-height: 1.7; }
+    .wechat-id {
+      font-size: 36px; font-weight: 800;
+      color: var(--accent); letter-spacing: 0.1em;
+    }
 
     .timeline { position: relative; padding-left: 40px; }
     .timeline::before {
@@ -182,8 +192,9 @@
 
     @media (max-width: 768px) {
       .nav { display: none; }
-      .metrics { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr 1fr; }
       .content-card { padding: 32px 24px; }
+      .wechat-id { font-size: 28px; }
     }
   </style>
 </head>
@@ -195,27 +206,24 @@
         <a href="#overview">概览</a>
         <a href="#cases">核心事项</a>
         <a href="#timeline">时间线</a>
+        <a href="#manager-issues">管理问题</a>
         <a href="#closing">诉求</a>
       </nav>
-      <div class="lang-switch">
-        <button class="lang-btn is-active">中文</button>
-        <button class="lang-btn">English</button>
-      </div>
     </header>
 
     <main class="main">
       <section class="section hero" id="overview">
         <div class="eyebrow">事件声明</div>
         <h1>用事实还原真相</h1>
-        <p>针对绩效沟通中涉及的多项与事实不符的评价内容，正式提出申诉和投诉，以下将针对具体事项逐一说明。</p>
+        <p>针对绩效沟通中涉及的多项与事实不符的评价内容，正式提出申诉和说明，以下将针对具体事项逐一陈述。</p>
         <div class="hero-actions">
           <a href="#cases" class="btn btn-primary">查看核心事项</a>
-          <a href="#timeline" class="btn btn-secondary">查看时间线</a>
+          <a href="#contact" class="btn btn-secondary">获取完整材料</a>
         </div>
         <div class="metrics">
           <div class="metric">
             <div class="metric-value">5</div>
-            <div class="metric-label">不实评价</div>
+            <div class="metric-label">项不实评价</div>
           </div>
           <div class="metric">
             <div class="metric-value">9</div>
@@ -223,7 +231,11 @@
           </div>
           <div class="metric">
             <div class="metric-value">4</div>
-            <div class="metric-label">主要项目</div>
+            <div class="metric-label">个主要项目</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">有证据支撑</div>
           </div>
         </div>
       </section>
@@ -235,7 +247,7 @@
           <div class="claims">
             <div class="claim">
               <h3>我是谁？</h3>
-              <p>2025年7月9日入职火山智能营销部门，2026年1月8日试用期转正。2026年2月11日前，聂松洋（NSY）为直属汇报上级，之后调整为XW。</p>
+              <p>2025年7月9日入职火山智能营销部门，2026年1月8日试用期转正。2026年2月11日前，聂松洋为直属汇报上级，之后调整为XW。</p>
             </div>
             <div class="claim">
               <h3>负责的项目</h3>
@@ -243,7 +255,7 @@
             </div>
             <div class="claim">
               <h3>发生了什么？</h3>
-              <p>在与聂松洋的绩效沟通中，收到多项与事实不符的评价内容，包括莫须有且完全失实的指责，现正式提出申诉和投诉。</p>
+              <p>在与聂松洋的绩效沟通中，收到多项与事实不符的评价内容，现正式提出申诉和说明。</p>
             </div>
           </div>
         </article>
@@ -252,16 +264,17 @@
       <section class="section" id="cases">
         <article class="content-card">
           <div class="content-kicker">核心事项</div>
-          <h2 class="content-title">逐条澄清事实</h2>
+          <h2 class="content-title">逐项澄清事实</h2>
 
           <div class="case">
             <div class="case-number">01</div>
-            <h3 class="case-title">"吉利项目做砸、无收益、只看结果"的评价不实</h3>
+            <h3 class="case-title">关于"吉利项目做砸、无收益、只看结果"的说明</h3>
             <div class="case-body">
-              <p><strong>项目实际情况：</strong>吉利项目并未做砸，实际为抖音开发平台账号限制及领导层视实际情况综合评估项目难度大，结果为收益偏低、推进难度较大，并非项目失败。</p>
-              <p><strong>时间点矛盾：</strong>聂松洋称项目做砸且不符合预期，但未在2025年10月份项目交付、本人转正等关键节点提出异议，时隔数月以此评价，缺乏合理性实则无理甩锅。</p>
-              <p><strong>本人履职尽责：</strong>全程跟进各环节，及时上报项目风险；按分工负责技术架构，同时主动解答群内所有技术相关问题，并解答超出本职范围配合工作。</p>
-              <p><strong>聂松洋已知晓全部过程：</strong>多次通过口头、飞书同步风险，聂松洋曾明确知晓全部过程，多次表态"即便项目出问题了也不是你的担责我知道过程"。</p>
+              <p><strong>项目实际情况：</strong>吉利项目并未"做砸"，实际为抖音开发平台账号限制及领导层视实际情况综合评估项目难度大，结果为收益偏低、推进难度较大，并非项目失败。</p>
+              <p><strong>时间点疑问：</strong>聂松洋称项目做砸且不符合预期，但未在2025年10月份项目交付、本人转正等关键节点提出异议，时隔数月以此评价，缺乏合理性。</p>
+              <p><strong>本人工作情况：</strong>全程跟进各环节，及时上报项目风险；按分工负责技术架构，同时主动解答群内所有技术相关问题，并配合超出本职范围的工作。</p>
+              <p><strong>沟通记录可证：</strong>多次通过口头、飞书同步风险，聂松洋曾明确知晓全部过程，多次表态"即便项目出问题了也不是你的责任，我知道过程"。</p>
+              <p><strong>功能开发情况：</strong>提前一个多月开发好功能，是抖开的账号一直申请不下来，产解同学也在极力推进。</p>
             </div>
           </div>
 
@@ -269,10 +282,11 @@
 
           <div class="case">
             <div class="case-number">02</div>
-            <h3 class="case-title">"环评反馈架构设计场景合理性存在问题"的评价不实</h3>
+            <h3 class="case-title">关于"环评反馈架构设计场景合理性存在问题"的说明</h3>
             <div class="case-body">
               <p><strong>未提供具体证据：</strong>在3月19日绩效沟通期间，诉求提供明确的发生的具体代码业务场景、模块、架构不合理点有哪些，但沟通未获任何答复。</p>
               <p><strong>逻辑矛盾：</strong>若架构存在不合理情况，为何项目开发全程无人提出、代码可正常评审上线？技术主管聂松洋日常无任何异议，仅在绩效沟通时以"他人反馈"指责，缺少有力证据。</p>
+              <p><strong>主管职责：</strong>作为技术主管，对组内的技术架构不了解，平时上线没有任何建议，最后绩效时说别人反馈，这是否符合正常流程？</p>
             </div>
           </div>
 
@@ -280,10 +294,12 @@
 
           <div class="case">
             <div class="case-number">03</div>
-            <h3 class="case-title">"质检和销售助手，没有承担服务owner责任"的评价不实</h3>
+            <h3 class="case-title">关于"质检和销售助手，没有承担服务owner责任"的说明</h3>
             <div class="case-body">
               <p><strong>从未正式官宣：</strong>聂松洋只是让我参与这部分工作，从未在公开场合做过正式的官宣我是owner，一直负责过质检相关工作的zhouyijie、zhaoxing、yangzhiyu等也没有跟我做过任何的交接工作。</p>
-              <p><strong>分工混乱：</strong>多次与zhouyijie沟通，其表示当前质检工作我们一起来处理。直到xiewen来后（3月6日）正式官宣我为质检owner，相关同学才进行了工作交接。</p>
+              <p><strong>分工情况：</strong>多次与zhouyijie沟通，其表示当前质检工作我们一起来处理。组里其他同学如yangzhiyu、zhaoxing等也在依旧负责做着一些质检中hop相关的配置旧的业务线的工作模块。</p>
+              <p><strong>新leader官宣后才正式交接：</strong>直到xiewen来后（3月6日）正式官宣我为质检owner，相关同学才进行了工作交接。</p>
+              <p><strong>工作响应情况：</strong>质检这部分工作我处理的过程中，都积极响应，有沟通截图可作证明。</p>
             </div>
           </div>
 
@@ -291,10 +307,10 @@
 
           <div class="case">
             <div class="case-number">04</div>
-            <h3 class="case-title">"跨团队沟通能力需要进一步提升"的评价不实</h3>
+            <h3 class="case-title">关于"跨团队沟通能力需要进一步提升"的说明</h3>
             <div class="case-body">
               <p><strong>未提供具体证据：</strong>本人要求提供具体事项及发生场景，但未获答复仅说是环评反馈的不能说。</p>
-              <p><strong>刻意制造问题：</strong>作为leader，自己曾说参与过项目了解细节，若环评真有此项结果，应说明影响程度和范围。作为当事人和受害人应有权知道，聂松洋这是刻意制造问题。</p>
+              <p><strong>知情权：</strong>作为leader，自己曾说参与过项目了解细节，若环评真有此项结果，应说明影响程度和范围。作为当事人应有权知道。</p>
             </div>
           </div>
 
@@ -302,10 +318,50 @@
 
           <div class="case">
             <div class="case-number">05</div>
-            <h3 class="case-title">"做事有情绪、自我内耗、影响团队发展"评价不实</h3>
+            <h3 class="case-title">关于"做事有情绪、自我内耗、影响团队发展"的说明</h3>
             <div class="case-body">
-              <p><strong>未收到任何具体事实与证据：</strong>相反，作为技术leader，聂松洋存在欺压下属、分工极度混乱、纵容他人窃取我的劳动成果、长期对下级进行打压及画饼等行为。</p>
-              <p><strong>工作从未出现问题：</strong>我的工作从未出现交付延期、故障或协作冲突等问题。若认定我影响了工作或团队，请列出具体涉及的项目、时间及造成的损失。</p>
+              <p><strong>未收到具体事实与证据：</strong>相反，在管理过程中存在一些需要改进的地方，包括分工不够清晰等问题。</p>
+              <p><strong>工作交付情况：</strong>我的工作从未出现交付延期、故障或协作冲突等问题。若认定我影响了工作或团队，请列出具体涉及的项目、时间及造成的损失。</p>
+              <p><strong>关于性格特点：</strong>我和聂松洋私下闲聊时说的个人性格特点，如"我是个比较在意面子的人"、"性格做事比较着急"，这些是个人性格特点的描述，不应被曲解为工作态度问题。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="manager-issues">
+        <article class="content-card">
+          <div class="content-kicker">管理问题</div>
+          <h2 class="content-title">关于管理过程中的一些问题</h2>
+
+          <div class="case">
+            <div class="case-number">A</div>
+            <h3 class="case-title">分工问题</h3>
+            <div class="case-body">
+              <p>对于给本人的工作内容，涉及质检&销售助手、外呼、吉利多项目并行。人的精力是有限的。</p>
+              <p>质检项目中，聂松洋从未正式官宣声明过我是owner，直到xiewen来后（3月6日）才正式官宣，相关同学才进行了工作交接。</p>
+            </div>
+          </div>
+
+          <div style="height: 40px;"></div>
+
+          <div class="case">
+            <div class="case-number">B</div>
+            <h3 class="case-title">外呼项目情况</h3>
+            <div class="case-body">
+              <p>对于在外呼工作过程中，数据闭环的专项背景，在大家都认为外呼数据闭环是个非常抽象的背景来立项情况下，我梳理了整个外呼数据链路的现状。</p>
+              <p>起初这个数据闭环专项我来作为owner，也挂名了tianwenrui跟着一起做，但我整理完调研结果后，只有本人一个人来做完了后面的事情。</p>
+              <p>数据看板成果链接：https://data.bytedance.net/aeolus/pages/dashboard/1505069</p>
+            </div>
+          </div>
+
+          <div style="height: 40px;"></div>
+
+          <div class="case">
+            <div class="case-number">C</div>
+            <h3 class="case-title">关于沟通记录</h3>
+            <div class="case-body">
+              <p>说实话将心比心，工作中也是如此。个人起初刚来时录音是考虑到想快速上手业务，因此7月份时想着会后再复听学习所需；在10月份时担心吉利难以落地，出于保护自己心理在10月份后续每次one one进行了录音。</p>
+              <p>所有录音都已对一些事项做了时间点标注，同时对于一些部门的业务数据内容做了音效处理。</p>
             </div>
           </div>
         </article>
@@ -344,7 +400,7 @@
             <div class="timeline-item">
               <div class="timeline-date">2026年3月</div>
               <h3 class="timeline-title">绩效沟通</h3>
-              <p class="timeline-body">3月19日绩效沟通，收到多项与事实不符的评价内容。3月6日xiewen正式官宣我为质检owner。</p>
+              <p class="timeline-body">3月6日xiewen正式官宣我为质检owner。3月19日绩效沟通，收到多项与事实不符的评价内容。</p>
             </div>
           </div>
         </article>
@@ -357,23 +413,35 @@
           <div class="claims">
             <div class="claim">
               <h3>绩效重审</h3>
-              <p>重新评审2025年度绩效等级，撤销聂松洋做出的所有与事实不符的负面评价，基于我的实际工作产出、工作情况给出公平公正的绩效评定。</p>
+              <p>重新评审2025年度绩效等级，撤销与事实不符的负面评价，基于我的实际工作产出、工作情况给出公平公正的绩效评定。</p>
             </div>
             <div class="claim">
               <h3>管理问题核查</h3>
-              <p>请求对聂松洋管理过程中存在的分工混乱、恶意抹黑下属、违反先评价和管理流程、违背公司坦诚清晰价值观等问题进行调查核实，相应处理。</p>
+              <p>请求对管理过程中存在的分工不够清晰等问题进行调查核实，相应处理。</p>
             </div>
             <div class="claim">
               <h3>对内容真实性负责</h3>
-              <p>本人所陈述内容均有证据支撑，对内容真实性负法律责任。</p>
+              <p>本人所陈述内容均有证据支撑，对内容真实性负责。</p>
             </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="contact">
+        <article class="content-card">
+          <div class="content-kicker">联系方式</div>
+          <h2 class="content-title">获取完整材料</h2>
+          <div class="contact-card">
+            <h3>需要完整录音和证据材料？</h3>
+            <p>本页面仅展示部分内容，如需完整的录音文件、沟通截图等证据材料，请添加微信联系。</p>
+            <div class="wechat-id">578451705</div>
           </div>
         </article>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© 2026 工作申诉声明</p>
+      <p>© 2026 工作申诉声明 | 本页面内容均有证据支撑</p>
     </footer>
   </div>
 </body>

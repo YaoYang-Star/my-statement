@@ -3,551 +3,542 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>拒绝职场PUA — 某大厂恶意绩效差评举报</title>
-  <meta name="description" content="用事实还原真相，揭露某大厂智能营销部门管理人员聂松洋、李亮的职场霸凌与不公行为" />
+  <title>拒绝职场PUA — 某大厂恶意绩效举报</title>
+  <meta name="description" content="揭露某大厂智能营销部门聂松洋、李亮的职场霸凌与不公" />
   <style>
-    :root {
-      --bg: #f5f5f7;
-      --bg-strong: #ffffff;
-      --text: #111111;
-      --muted: #6e6e73;
-      --line: rgba(17, 17, 17, 0.08);
-      --accent: #ff3b30;
-      --accent-soft: rgba(255, 59, 48, 0.1);
-      --accent-secondary: #0071e3;
-      --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max-width: 1180px;
-    }
-
-    * { box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
-      margin: 0;
-      font-family: "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top left, rgba(255, 59, 48, 0.08), transparent 28%),
-                  radial-gradient(circle at top right, rgba(0, 113, 227, 0.08), transparent 26%),
-                  var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.7;
     }
-
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-
-    .page-shell { min-height: 100vh; }
-
-    .topbar {
-      position: sticky; top: 0; z-index: 20;
-      display: flex; align-items: center; justify-content: center;
-      width: min(calc(100% - 32px), var(--max-width));
-      margin: 16px auto 0;
-      padding: 14px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 12px 28px rgba(17, 17, 17, 0.06);
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-
-    .brand { font-weight: 800; letter-spacing: 0.08em; color: var(--accent); }
-
     .nav {
-      position: absolute; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 18px;
-      color: var(--muted); font-size: 13px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 0;
     }
-
-    .nav a:hover { color: var(--text); }
-
-    .main { padding: 40px 16px 80px; }
-    .section { width: min(calc(100% - 32px), var(--max-width)); margin: 0 auto; }
-    .hero { padding: 60px 0 40px; }
-
-    .eyebrow {
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 5.5vw, 56px);
-      line-height: 1.05; margin: 0 0 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero p {
-      font-size: 19px; line-height: 1.7;
-      color: var(--muted); margin: 0 0 28px;
-      max-width: 720px;
-    }
-
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 14px 26px; border-radius: 999px;
-      font-weight: 600; font-size: 15px;
-      border: none; cursor: pointer; transition: all 0.2s;
-    }
-
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-primary:hover { background: #d63027; transform: translateY(-1px); }
-    .btn-secondary { background: white; color: var(--text); border: 1px solid var(--line); }
-    .btn-secondary:hover { background: #fafafa; }
-
-    .metrics {
-      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px; margin-top: 48px;
-    }
-
-    .metric {
-      background: white; padding: 24px;
-      border-radius: var(--radius-lg); border: 1px solid var(--line);
-    }
-
-    .metric-value { font-size: 32px; font-weight: 700; margin-bottom: 4px; color: var(--accent); }
-    .metric-label { font-size: 13px; color: var(--muted); }
-
-    .content-card {
-      background: white; padding: 48px;
-      border-radius: var(--radius-xl); border: 1px solid var(--line);
-      box-shadow: var(--shadow); margin-bottom: 24px;
-    }
-
-    .content-kicker {
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 12px;
-    }
-
-    .content-title {
-      font-size: clamp(26px, 3.5vw, 34px);
-      line-height: 1.15; margin: 0 0 32px;
-      letter-spacing: -0.01em;
-    }
-
-    .person-card {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px;
-    }
-
-    .person {
-      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-      border: 1px solid rgba(255, 59, 48, 0.2);
-      padding: 28px; border-radius: var(--radius-lg);
-    }
-
-    .person-role { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
-    .person-name { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
-    .person-desc { color: var(--muted); line-height: 1.6; margin: 0; }
-
-    .case { margin-bottom: 40px; }
-    .case:last-child { margin-bottom: 0; }
-
-    .case-header {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
-    }
-
-    .case-number {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 44px; height: 44px; border-radius: 12px;
-      background: var(--accent-soft); color: var(--accent);
-      font-weight: 800; font-size: 18px;
-    }
-
-    .case-title { font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3; }
-
-    .case-accusation {
-      background: #fff5f5; border: 1px solid rgba(255, 59, 48, 0.2);
-      border-radius: var(--radius-md); padding: 20px 24px;
-      margin-bottom: 20px;
-    }
-
-    .case-accusation-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px;
-    }
-
-    .case-accusation-text {
-      font-size: 16px; line-height: 1.6; margin: 0;
-      font-weight: 500;
-    }
-
-    .case-clarification {
-      background: #f5fff7; border: 1px solid rgba(52, 199, 89, 0.2);
-      border-radius: var(--radius-md); padding: 24px;
-    }
-
-    .case-clarification-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: #34c759; margin-bottom: 12px;
-    }
-
-    .case-body { color: var(--text); line-height: 1.8; }
-    .case-body p { margin: 0 0 14px; }
-    .case-body p:last-child { margin-bottom: 0; }
-    .case-body strong { color: var(--text); font-weight: 600; }
-    .case-body em { font-style: normal; background: #fff3cd; padding: 2px 6px; border-radius: 4px; }
-
-    .evidence-tag {
+    .logo { font-weight: 800; font-size: 18px; letter-spacing: 0.5px; }
+    .logo span { color: #f43f5e; }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; color: #94a3b8; }
+    .nav-links a:hover { color: #fff; }
+    
+    /* Hero */
+    .hero { padding: 80px 0 60px; }
+    .hero-tag {
       display: inline-block;
-      background: #e3f2fd;
-      color: #1565c0;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
+      background: rgba(244, 63, 94, 0.15);
+      color: #fda4af;
+      padding: 6px 14px;
       border-radius: 999px;
-      margin-right: 8px;
-      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(244, 63, 94, 0.3);
     }
-
-    .warning-box {
-      background: #fff3cd; border: 1px solid #ffc107;
-      border-radius: var(--radius-lg); padding: 24px;
-      margin-bottom: 24px;
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
-
-    .warning-box h4 { margin: 0 0 12px; color: #856404; font-size: 18px; }
-    .warning-box p { margin: 0; color: #856404; line-height: 1.7; }
-
-    .contact-card {
-      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-      border: 1px solid rgba(255, 59, 48, 0.3);
-      border-radius: var(--radius-lg); padding: 36px;
-      text-align: center;
-    }
-
-    .contact-card h3 { margin: 0 0 16px; font-size: 24px; }
-    .contact-card p { margin: 0 0 20px; color: var(--muted); line-height: 1.7; }
-    .wechat-id {
-      font-size: 36px; font-weight: 800;
-      color: var(--accent); letter-spacing: 0.08em;
-    }
-
-    .timeline { position: relative; padding-left: 40px; }
-    .timeline::before {
-      content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px;
-      width: 2px; background: var(--line);
-    }
-
-    .timeline-item { position: relative; margin-bottom: 32px; }
-    .timeline-item::before {
-      content: ""; position: absolute; left: -33px; top: 6px;
-      width: 16px; height: 16px; border-radius: 999px;
-      background: white; border: 2px solid var(--accent);
-    }
-
-    .timeline-date { font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
-    .timeline-title { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
-    .timeline-body { color: var(--muted); line-height: 1.7; margin: 0; }
-
-    .manager-issue {
-      border-left: 3px solid var(--accent);
-      padding-left: 20px;
+    .hero h1 .highlight { color: #f43f5e; }
+    .hero p {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 640px;
       margin-bottom: 32px;
     }
-
-    .manager-issue:last-child { margin-bottom: 0; }
-
-    .manager-issue-title {
-      font-size: 20px; font-weight: 700;
-      margin: 0 0 12px;
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
     }
-
-    .quote-box {
-      background: #f8f9fa;
-      border-left: 4px solid var(--accent-secondary);
+    .btn-primary {
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+      color: white;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244, 63, 94, 0.35); }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+    
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: #f43f5e;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: 13px; color: #94a3b8; }
+    
+    /* Section */
+    section { padding: 60px 0; }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    
+    /* Card */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+    
+    /* People */
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .person-card {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .person-role {
+      font-size: 13px;
+      color: #fda4af;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .person-name {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .person-desc { color: #94a3b8; font-size: 14px; }
+    
+    /* Accusation */
+    .accusation {
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      border-radius: 12px;
       padding: 20px 24px;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 16px;
+    }
+    .accusation-label {
+      font-size: 12px;
+      color: #fda4af;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .accusation-text { font-weight: 500; }
+    
+    .clarification {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .clarification-label {
+      font-size: 12px;
+      color: #86efac;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    
+    .case-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(244, 63, 94, 0.2);
+      color: #f43f5e;
+      border-radius: 10px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    
+    .evidence-tag {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    
+    .quote {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 4px solid #3b82f6;
+      padding: 18px 22px;
+      border-radius: 0 12px 12px 0;
       margin: 16px 0;
     }
-
-    .quote-box p { margin: 0; line-height: 1.7; }
-    .quote-author {
-      margin-top: 10px;
+    
+    .manager-item {
+      border-left: 3px solid #f43f5e;
+      padding-left: 20px;
+      margin-bottom: 28px;
+    }
+    .manager-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .timeline { position: relative; padding-left: 36px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 2px solid #f43f5e;
+    }
+    .timeline-date {
       font-size: 13px;
-      color: var(--muted);
+      color: #94a3b8;
       font-weight: 600;
+      margin-bottom: 4px;
     }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 40px 0;
+    .timeline-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
     }
-
-    .key-points {
+    .timeline-desc { color: #94a3b8; font-size: 14px; }
+    
+    .tips-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-top: 24px;
     }
-
-    .key-point {
-      background: #fff8f8;
-      border: 1px solid rgba(255, 59, 48, 0.15);
-      padding: 20px;
-      border-radius: var(--radius-md);
+    .tip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px;
+      border-radius: 14px;
     }
-
-    .key-point-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
+    .tip-icon { font-size: 32px; margin-bottom: 12px; }
+    .tip-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .tip-desc { color: #94a3b8; font-size: 14px; }
+    
+    .contact-box {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-radius: 16px;
+      padding: 36px;
+      text-align: center;
     }
-
-    .key-point-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0 0 8px;
+    .wechat {
+      font-size: 42px;
+      font-weight: 800;
+      color: #f43f5e;
+      margin-top: 16px;
+      letter-spacing: 2px;
     }
-
-    .key-point-desc {
+    
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #64748b;
       font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 40px;
     }
-
-    .footer { text-align: center; padding: 40px 16px; color: var(--muted); font-size: 14px; }
-    .footer strong { color: var(--accent); }
-
+    
     @media (max-width: 768px) {
-      .nav { display: none; }
-      .metrics { grid-template-columns: 1fr 1fr; }
-      .content-card { padding: 32px 24px; }
-      .wechat-id { font-size: 28px; }
-      .person-card { grid-template-columns: 1fr; }
-      .key-points { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .people-grid { grid-template-columns: 1fr; }
+      .tips-grid { grid-template-columns: 1fr; }
+      .wechat { font-size: 32px; }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="topbar">
-      <div class="brand">拒绝职场PUA</div>
+  <header>
+    <div class="container">
       <nav class="nav">
-        <a href="#overview">概览</a>
-        <a href="#five-lies">五项污蔑</a>
-        <a href="#nie-issues">聂松洋问题</a>
-        <a href="#liang-issues">李亮问题</a>
-        <a href="#timeline">时间线</a>
-        <a href="#advice">打工人建议</a>
-        <a href="#contact">联系我</a>
+        <div class="logo">拒绝职场<span>PUA</span></div>
+        <div class="nav-links">
+          <a href="#overview">概览</a>
+          <a href="#accusations">五项污蔑</a>
+          <a href="#nie-issues">聂松洋问题</a>
+          <a href="#liang-issues">李亮问题</a>
+          <a href="#timeline">时间线</a>
+          <a href="#advice">建议</a>
+          <a href="#contact">联系</a>
+        </div>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="main">
-      <section class="section hero" id="overview">
-        <div class="eyebrow">事件公开</div>
-        <h1>用事实还原真相<br/>揭露职场霸凌与不公</h1>
-        <p>我是某节大厂的一名研发员工。今天我站出来，公开举报智能营销子部门管理人员<strong>聂松洋</strong>和<strong>李亮</strong>的恶意绩效差评、职场PUA及其他违规行为。以下内容均有完整证据支撑。</p>
+  <main>
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-tag">事件公开 · 实名举报</div>
+        <h1>用事实还原真相<br/>揭露<span class="highlight">职场霸凌</span>与不公</h1>
+        <p>我是某大厂的一名研发员工。今天我站出来，公开举报智能营销子部门管理人员<strong>聂松洋</strong>和<strong>李亮</strong>的恶意绩效差评、职场PUA及其他违规行为。以下内容均有完整证据支撑。</p>
         <div class="hero-actions">
-          <a href="#five-lies" class="btn btn-primary">查看五项污蔑澄清</a>
+          <a href="#accusations" class="btn btn-primary">查看五项污蔑澄清</a>
           <a href="#contact" class="btn btn-secondary">获取完整证据</a>
         </div>
-        <div class="metrics">
-          <div class="metric">
-            <div class="metric-value">5</div>
-            <div class="metric-label">项莫须有罪名</div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">项莫须有罪名</div>
           </div>
-          <div class="metric">
-            <div class="metric-value">7</div>
-            <div class="metric-label">项聂松洋违规</div>
+          <div class="stat">
+            <div class="stat-number">7</div>
+            <div class="stat-label">项聂松洋违规</div>
           </div>
-          <div class="metric">
-            <div class="metric-value">3</div>
-            <div class="metric-label">项李亮包庇行为</div>
+          <div class="stat">
+            <div class="stat-number">3</div>
+            <div class="stat-label">项李亮包庇</div>
           </div>
-          <div class="metric">
-            <div class="metric-value">100%</div>
-            <div class="metric-label">有证据支撑</div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">有证据支撑</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="who">
-        <article class="content-card">
-          <div class="content-kicker">当事人</div>
-          <h2 class="content-title">被举报的两位管理人员</h2>
+    <section id="who">
+      <div class="container">
+        <h2 class="section-title">被举报的两位管理人员</h2>
+        <p class="section-subtitle">一个恶意构陷，一个包庇纵容</p>
+        <div class="people-grid">
           <div class="person-card">
-            <div class="person">
-              <div class="person-role">被举报人一</div>
-              <div class="person-name">聂松洋</div>
-              <p class="person-desc">原直属技术主管，负责日常管理和绩效评价。在任职期间存在多项管理违规和职场霸凌行为。</p>
-            </div>
-            <div class="person">
-              <div class="person-role">被举报人二</div>
-              <div class="person-name">李亮</div>
-              <p class="person-desc">聂松洋的上级（+2），负责申诉复议。在收到完整证据后，仍以职级压制、包庇下属，甚至威胁举报人。</p>
+            <div class="person-role">被举报人一</div>
+            <div class="person-name">聂松洋</div>
+            <p class="person-desc">原直属技术主管，负责日常管理和绩效评价。在任职期间存在多项管理违规和职场霸凌行为。</p>
+          </div>
+          <div class="person-card">
+            <div class="person-role">被举报人二</div>
+            <div class="person-name">李亮</div>
+            <p class="person-desc">聂松洋的上级（+2），负责申诉复议。在收到完整证据后，仍以职级压制、包庇下属，甚至威胁举报人。</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 20px; background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.3);">
+          <strong style="color: #fde68a;">⚠️ 事件简述</strong>
+          <p style="margin-top: 10px; color: #fef3c7;">2026年3月19日晚的绩效沟通会上，聂松洋在新leader谢文面前，以轻蔑的态度给了我五项完全不符合事实的负面评价。我不服，提出申诉，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="accusations">
+      <div class="container">
+        <h2 class="section-title">五项莫须有罪名</h2>
+        <p class="section-subtitle">聂松洋给我扣了五顶"莫须有"的帽子，以下用证据一一澄清</p>
+
+        <div class="card">
+          <div class="case-number">01</div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑一："JL项目做砸、无收益、只看结果" + "没和田同学有任何工作沟通"</h3>
+          <div class="accusation">
+            <div class="accusation-label">聂松洋的指控</div>
+            <div class="accusation-text">把项目做砸了，没有收益；并且没有和田同学有任何工作沟通，未达到预期。</div>
+          </div>
+          <div class="clarification">
+            <div class="clarification-label">事实澄清</div>
+            <div style="color: #e2e8f0;">
+              <p style="margin-bottom: 12px;"><strong>项目实际情况：</strong>吉利项目收益偏低是因为合作DY平台账号限制，领导层视实际情况综合评估项目难度大，结果为<strong>收益偏低、推进难度较大，并非项目失败</strong>。</p>
+              <p style="margin-bottom: 12px;"><strong>功能提前完成：</strong>我提前一个多月就开发好了功能，是合作账号一直申请不下来，产解同学也在极力推进。</p>
+              <p style="margin-bottom: 12px;"><strong>聂松洋自己的话打脸：</strong>他多次说过"就算项目出问题了也不是你的责任，我知道过程"以及"组内谁什么样子我都清楚了，我是不会给你差绩效的"等类似话语。
+                <span class="evidence-tag">有聊天记录</span><span class="evidence-tag">有录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>与田同学有大量沟通：</strong>我们不仅有分工确认——我负责AI私信，田同学做视频质检——还有大量的项目沟通记录和参会记录。
+                <span class="evidence-tag">有沟通记录</span><span class="evidence-tag">有参会记录</span></p>
+              <p><strong>时间点矛盾：</strong>如果真是我做砸了的话，为何在2025年10月份项目交付及1月上旬转正等时间节点对我提出呢？</p>
             </div>
           </div>
-          <div class="warning-box">
-            <h4>⚠️ 事件概述</h4>
-            <p>2026年3月19日晚的绩效沟通会上，聂松洋在新leader谢文面前，以轻蔑的态度给了我五项完全不符合事实的负面评价。我不服，提出申诉，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
+        </div>
+
+        <div class="card">
+          <div class="case-number">02</div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑二："架构设计的场景合理性存在问题"</h3>
+          <div class="accusation">
+            <div class="accusation-label">聂松洋的指控</div>
+            <div class="accusation-text">架构设计的场景合理性存在问题，是环评人员评价的，无法告知具体内容。</div>
           </div>
-        </article>
-      </section>
-
-      <section class="section" id="five-lies">
-        <article class="content-card">
-          <div class="content-kicker">核心事实</div>
-          <h2 class="content-title">五项莫须有罪名的澄清</h2>
-          <p style="color: var(--muted); margin-bottom: 32px; line-height: 1.7;">聂松洋给我扣了五顶"莫须有"的帽子，以下我用证据一一澄清：</p>
-
-          <div class="case">
-            <div class="case-header">
-              <div class="case-number">01</div>
-              <h3 class="case-title">污蔑："JL项目做砸、无收益、只看结果" + "没和田同学有任何工作沟通"</h3>
-            </div>
-            <div class="case-accusation">
-              <div class="case-accusation-label">聂松洋的指控</div>
-              <p class="case-accusation-text">把项目做砸了，没有收益；并且没有和田同学有任何工作沟通，未达到预期。</p>
-            </div>
-            <div class="case-clarification">
-              <div class="case-clarification-label">事实澄清</div>
-              <div class="case-body">
-                <p><strong>项目实际情况：</strong>吉利项目收益偏低是因为合作DY平台账号限制，领导层视实际情况综合评估项目难度大，结果为<strong>收益偏低、推进难度较大，并非项目失败</strong>。</p>
-                <p><strong>功能提前完成：</strong>我提前一个多月就开发好了功能，是合作账号一直申请不下来，产解同学也在极力推进。</p>
-                <p><strong>聂松洋自己的话打脸：</strong>他多次说过<em>"就算项目出问题了也不是你的责任，我知道过程"</em>以及<em>"组内谁什么样子我都清楚了，我是不会给你差绩效的"</em>等类似话语。<span class="evidence-tag">有聊天记录</span><span class="evidence-tag">有录音</span></p>
-                <p><strong>与田同学有大量沟通：</strong>我们不仅有分工确认——我负责AI私信，田同学做视频质检——还有大量的项目沟通记录和参会记录。<span class="evidence-tag">有沟通记录</span><span class="evidence-tag">有参会记录</span></p>
-                <p><strong>时间点矛盾：</strong>如果真是我做砸了的话，为何在2025年10月份项目交付及1月上旬转正等时间节点对我提出呢？</p>
-              </div>
+          <div class="clarification">
+            <div class="clarification-label">事实澄清</div>
+            <div style="color: #e2e8f0;">
+              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我问他具体是哪部分代码、哪个模块、哪个场景不合理，他根本回答不上一句，只说是"环评人员评价他无法告知，只有我新leader谢文可以看到"。</p>
+              <p style="margin-bottom: 12px;"><strong>逻辑矛盾：</strong>若我架构存在不合理情况，为何项目开发全程无人提出、代码可正常评审上线？聂松洋作为技术主管也好，还是我团队中的mentor同学，从来没有提出过任何异议？这合乎常理么？</p>
+              <p><strong>主管失职：</strong>作为技术主管，对组内的技术架构不了解，平时上线没有任何建议，最后绩效时说别人反馈，这是正常流程么？只在绩效沟通时拿"他人反馈"说事，缺少有力证据，这分明是故意找茬，也是他作为主管的失职。
+                <span class="evidence-tag">有代码评审记录</span><span class="evidence-tag">有上线记录</span></p>
             </div>
           </div>
+        </div>
 
-          <div class="divider"></div>
-
-          <div class="case">
-            <div class="case-header">
-              <div class="case-number">02</div>
-              <h3 class="case-title">污蔑："架构设计的场景合理性存在问题"</h3>
-            </div>
-            <div class="case-accusation">
-              <div class="case-accusation-label">聂松洋的指控</div>
-              <p class="case-accusation-text">架构设计的场景合理性存在问题，是环评人员评价的，无法告知具体内容。</p>
-            </div>
-            <div class="case-clarification">
-              <div class="case-clarification-label">事实澄清</div>
-              <div class="case-body">
-                <p><strong>拒绝提供具体证据：</strong>我问他具体是哪部分代码、哪个模块、哪个场景不合理，他根本回答不上一句，只说是"环评人员评价他无法告知，只有我新leader谢文可以看到"。</p>
-                <p><strong>逻辑矛盾：</strong>若我架构存在不合理情况，为何项目开发全程无人提出、代码可正常评审上线？聂松洋作为技术主管也好，还是我团队中的mentor同学，从来没有提出过任何异议？这合乎常理么？</p>
-                <p><strong>主管失职：</strong>作为技术主管，对组内的技术架构不了解，平时上线没有任何建议，最后绩效时说别人反馈，这是正常流程么？只在绩效沟通时拿"他人反馈"说事，缺少有力证据，这分明是故意找茬，也是他作为主管的失职。<span class="evidence-tag">有代码评审记录</span><span class="evidence-tag">有上线记录</span></p>
-              </div>
+        <div class="card">
+          <div class="case-number">03</div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑三："在某个组内相关的模块中，没有承担服务owner责任"</h3>
+          <div class="accusation">
+            <div class="accusation-label">聂松洋的指控</div>
+            <div class="accusation-text">在质检模块中，没有承担服务owner责任。</div>
+          </div>
+          <div class="clarification">
+            <div class="clarification-label">事实澄清</div>
+            <div style="color: #e2e8f0;">
+              <p style="margin-bottom: 12px;"><strong>从未正式官宣：</strong>聂松洋从来没有在公开场合正式官宣我是owner，一直负责质检的周某、赵某也没跟我做过交接。</p>
+              <p style="margin-bottom: 12px;"><strong>分工混乱：</strong>我多次跟周某沟通，他都表示"当前质检工作我们一起来处理"。组里其他同学都觉得分工非常混乱。
+                <span class="evidence-tag">有沟通截图</span></p>
+              <p style="margin-bottom: 12px;"><strong>我曾要求官宣：</strong>元旦前在火锅店吃饭时，我跟聂松洋确认：质检到底谁做，如果是我的话希望在会上官宣，要不很多人都不知道，但他给的回应是我和周同学一起做。
+                <span class="evidence-tag">有录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>新leader来后才正式交接：</strong>直到新leader谢文来后，3月9日才正式官宣我负责质检，之后赵某和杨某同学才跟我完成了交接工作。
+                <span class="evidence-tag">有会议记录</span><span class="evidence-tag">有交接截图</span></p>
+              <p><strong>挂羊头卖狗肉：</strong>在此之前，聂松洋都是要求该服务系统的开发进度都是我mentor赵某同学来同步质检进度，现在却说我一直是owner没起到作用，这不是挂羊头卖狗肉、让我当替罪羊吗？</p>
             </div>
           </div>
+        </div>
 
-          <div class="divider"></div>
-
-          <div class="case">
-            <div class="case-header">
-              <div class="case-number">03</div>
-              <h3 class="case-title">污蔑："在某个组内相关的模块中，没有承担服务owner责任"</h3>
-            </div>
-            <div class="case-accusation">
-              <div class="case-accusation-label">聂松洋的指控</div>
-              <p class="case-accusation-text">在质检模块中，没有承担服务owner责任。</p>
-            </div>
-            <div class="case-clarification">
-              <div class="case-clarification-label">事实澄清</div>
-              <div class="case-body">
-                <p><strong>从未正式官宣：</strong>聂松洋从来没有在公开场合正式官宣我是owner，一直负责质检的周某、赵某也没跟我做过交接。</p>
-                <p><strong>分工混乱：</strong>我多次跟周某沟通，他都表示<em>"当前质检工作我们一起来处理"</em>。组里其他同学都觉得分工非常混乱。<span class="evidence-tag">有沟通截图</span></p>
-                <p><strong>我曾要求官宣：</strong>元旦前在火锅店吃饭时，我跟聂松洋确认：质检到底谁做，如果是我的话希望在会上官宣，要不很多人都不知道，但他给的回应是我和周同学一起做。<span class="evidence-tag">有录音</span></p>
-                <p><strong>新leader来后才正式交接：</strong>直到新leader谢文来后，3月9日才正式官宣我负责质检，之后赵某和杨某同学才跟我完成了交接工作。<span class="evidence-tag">有会议记录</span><span class="evidence-tag">有交接截图</span></p>
-                <p><strong>挂羊头卖狗肉：</strong>在此之前，聂松洋都是要求该服务系统的开发进度都是我mentor赵某同学来同步质检进度，现在却说我一直是owner没起到作用，这不是挂羊头卖狗肉、让我当替罪羊吗？</p>
-              </div>
+        <div class="card">
+          <div class="case-number">04</div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑四："跨团队沟通能力需要进一步提升"</h3>
+          <div class="accusation">
+            <div class="accusation-label">聂松洋的指控</div>
+            <div class="accusation-text">跨团队沟通能力需要进一步提升，是环评反馈的，不能说。</div>
+          </div>
+          <div class="clarification">
+            <div class="clarification-label">事实澄清</div>
+            <div style="color: #e2e8f0;">
+              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我要求聂松洋拿出具体证据，他说是环评反馈的不能说。</p>
+              <p style="margin-bottom: 12px;"><strong>实际情况：</strong>大家看这些截图，群里@我的问题，我可以说我每次都进行积极配合与解答。产品咨询、B端的业务方提问、运营的问题，我都积极响应。
+                <span class="evidence-tag">有群聊截图</span></p>
+              <p><strong>到底是谁沟通有问题：</strong>相反，也可以看到，聂松洋经常跟我说"交付那些人像某某、某某都是傻x，办事很阴，该怼就怼"等类似话语，到底是谁沟通有问题？
+                <span class="evidence-tag">有录音</span></p>
             </div>
           </div>
+        </div>
 
-          <div class="divider"></div>
-
-          <div class="case">
-            <div class="case-header">
-              <div class="case-number">04</div>
-              <h3 class="case-title">污蔑："跨团队沟通能力需要进一步提升"</h3>
-            </div>
-            <div class="case-accusation">
-              <div class="case-accusation-label">聂松洋的指控</div>
-              <p class="case-accusation-text">跨团队沟通能力需要进一步提升，是环评反馈的，不能说。</p>
-            </div>
-            <div class="case-clarification">
-              <div class="case-clarification-label">事实澄清</div>
-              <div class="case-body">
-                <p><strong>拒绝提供具体证据：</strong>我要求聂松洋拿出具体证据，他说是环评反馈的不能说。</p>
-                <p><strong>实际情况：</strong>大家看这些截图，群里@我的问题，我可以说我每次都进行积极配合与解答。产品咨询、B端的业务方提问、运营的问题，我都积极响应。<span class="evidence-tag">有群聊截图</span></p>
-                <p><strong>到底是谁沟通有问题：</strong>相反，也可以看到，聂松洋经常跟我说<em>"交付那些人像某某、某某都是傻x，办事很阴，该怼就怼"</em>等类似话语，到底是谁沟通有问题？<span class="evidence-tag">有录音</span></p>
-              </div>
+        <div class="card">
+          <div class="case-number">05</div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑五："个人自我内耗，影响团队和谐，不利于团队发展"</h3>
+          <div class="accusation">
+            <div class="accusation-label">聂松洋的指控</div>
+            <div class="accusation-text">个人工作带情绪，自我内耗，影响团队和谐，不利于团队发展。</div>
+          </div>
+          <div class="clarification">
+            <div class="clarification-label">事实澄清</div>
+            <div style="color: #e2e8f0;">
+              <p style="margin-bottom: 12px;"><strong>无任何证据支撑：</strong>我从未收到任何具体事实与证据支撑。相反，作为技术leader，聂松洋存在欺压下属、分工极度混乱、纵容他人窃取我的劳动成果、长期对下级进行打压及画饼等行为。</p>
+              <p style="margin-bottom: 12px;"><strong>工作从未出现问题：</strong>我入职以来的几个月，多个项目并行，从来没有耽误过交付，从来没有出现过线上事故。
+                <span class="evidence-tag">有代码提交记录</span><span class="evidence-tag">有项目文档</span></p>
+              <p style="margin-bottom: 12px;"><strong>真实情况：</strong>在他下边做事的几个月当中，其都是让我游走于各个模块，给他的嫡系来做辅助。</p>
+              <p style="margin-bottom: 12px;"><strong>录音证据打脸：</strong>在1月27日的one one过程中（绩效评估周期），聂松洋说："至今为止，我没从别人那得到任何你的负面反馈"，这和现在绩效说的"环评有人说你态度有问题"明显矛盾。
+                <span class="evidence-tag">有录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>私下聊天被扭曲：</strong>更过分的是，我和聂松洋私下闲聊时说的个人性格特点，比如"我是个比较在意面子的人"、"性格做事比较着急"，结果全部被他扭曲成我"内耗、影响团队发展"的标签。
+                <span class="evidence-tag">有录音</span></p>
+              <p><strong>责任心被歪曲：</strong>我承认我做事情比较着急，但这是责任心的体现！而且是因为聂松洋在工作上的安排很混乱，让我游走各个子模块，配合各个模块Owner做事，从未给过owner的名分。</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="divider"></div>
+    <section id="nie-issues">
+      <div class="container">
+        <h2 class="section-title">聂松洋的七项违规问题</h2>
+        <p class="section-subtitle">澄清完这五点污蔑，现在公开聂松洋的管理及违规问题</p>
 
-          <div class="case">
-            <div class="case-header">
-              <div class="case-number">05</div>
-              <h3 class="case-title">污蔑："个人自我内耗，影响团队和谐，不利于团队发展"</h3>
-            </div>
-            <div class="case-accusation">
-              <div class="case-accusation-label">聂松洋的指控</div>
-              <p class="case-accusation-text">个人工作带情绪，自我内耗，影响团队和谐，不利于团队发展。</p>
-            </div>
-            <div class="case-clarification">
-              <div class="case-clarification-label">事实澄清</div>
-              <div class="case-body">
-                <p><strong>无任何证据支撑：</strong>我从未收到任何具体事实与证据支撑。相反，作为技术leader，聂松洋存在欺压下属、分工极度混乱、纵容他人窃取我的劳动成果、长期对下级进行打压及画饼等行为。</p>
-                <p><strong>工作从未出现问题：</strong>我入职以来的几个月，多个项目并行，从来没有耽误过交付，从来没有出现过线上事故。<span class="evidence-tag">有代码提交记录</span><span class="evidence-tag">有项目文档</span></p>
-                <p><strong>真实情况：</strong>在他下边做事的几个月当中，其都是让我游走于各个模块，给他的嫡系来做辅助。</p>
-                <p><strong>录音证据打脸：</strong>在1月27日的one one过程中（绩效评估周期），聂松洋说：<em>"至今为止，我没从别人那得到任何你的负面反馈"</em>，这和现在绩效说的"环评有人说你态度有问题"明显矛盾。<span class="evidence-tag">有录音</span></p>
-                <p><strong>私下聊天被扭曲：</strong>更过分的是，我和聂松洋私下闲聊时说的个人性格特点，比如<em>"我是个比较在意面子的人"</em>、<em>"性格做事比较着急"</em>，结果全部被他扭曲成我"内耗、影响团队发展"的标签。<span class="evidence-tag">有录音</span></p>
-                <p><strong>责任心被歪曲：</strong>我承认我做事情比较着急，但这是责任心的体现！而且是因为聂松洋在工作上的安排很混乱，让我游走各个子模块，配合各个模块Owner做事，从未给过owner的名分。</p>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="section" id="nie-issues">
-        <article class="content-card">
-          <div class="content-kicker">举报内容</div>
-          <h2 class="content-title">聂松洋的七项管理与违规问题</h2>
-          <p style="color: var(--muted); margin-bottom: 32px; line-height: 1.7;">澄清完这五点污蔑，现在我要公开说一下聂松洋的一些管理及违规的问题，我有明确的证据：</p>
-
-          <div class="manager-issue">
-            <h3 class="manager-issue-title">一、分工极度混乱</h3>
-            <div class="case-body">
-              <p>他让我一个人同时负责质检、销售助手、外呼、吉利项目，<strong>多个系统并行工作</strong>。这是组里其他同学的反馈，大家都觉得分工非常混乱。</p>
-            </div>
+        <div class="card">
+          <div class="manager-item">
+            <div class="manager-title">一、分工极度混乱</div>
+            <p>他让我一个人同时负责质检、销售助手、外呼、吉利项目，<strong>多个系统并行工作</strong>。这是组里其他同学的反馈，大家都觉得分工非常混乱。</p>
           </div>
 
-          <div class="manager-issue">
-            <h3 class="manager-issue-title">二、拉帮结派，区别对待员工</h3>
-            <div class="case-body">
-              <p>似乎组内的老员工和家庭相对优渥的同学其特殊对待的，他曾在公众场合说：</p>
-              <div class="quote-box">
-                <p>"某某你定的什么酒店，肯定品味不如某某"；"某某你的打扮就是社会小伙，看看人家某某和某某，一看就是好孩子还帅"。</p>
-              </div>
-              <p>他跟关系好的下属说：<em>"我怎么可能裁你，我裁谁都不会裁你的"</em>；环评告诉嫡系不要写和他不对付的人，他也不会给这个嫡系邀人等话。</p>
-              <p>还有在1月27号one one中我表示某个项目的产品PRD是我出的，对于遇到的卡点我不知道怎么进行工作，他觉得我是在说那位产品异性的不好，当即和我翻脸。<span class="evidence-tag">有录音</span></p>
+          <div class="manager-item">
+            <div class="manager-title">二、拉帮结派，区别对待员工</div>
+            <p>似乎组内的老员工和家庭相对优渥的同学其特殊对待的，他曾在公众场合说：</p>
+            <div class="quote">
+              "某某你定的什么酒店，肯定品味不如某某"；"某某你的打扮就是社会小伙，看看人家某某和某某，一看就是好孩子还帅"。
             </div>
+            <p>他跟关系好的下属说："我怎么可能裁你，我裁谁都不会裁你的"；环评告诉嫡系不要写和他不对付的人，他也不会给这个嫡系邀人等话。</p>
+            <p>还有在1月27号one one中我表示某个项目的产品PRD是我出的，对于遇到的卡点我不知道怎么进行工作，他觉得我是在说那位产品异性的不好，当即和我翻脸。
+              <span class="evidence-tag">有录音</span></p>
           </div>
 
-          <div class="manager-issue">
-            <h3 class="manager-issue-title">三、背后说其他同事坏话，制造团队矛盾</h3>
-            <div class="case-body">
-              <p>如上问中他对我说的怼交付那边的话，还曾在会上说<em>"田同学和詹同学做事很差很顿"</em>需要人盯着去执行等。<span class="evidence-tag">有录音</span></p>
-            </div>
+          <div class="manager-item">
+            <div class="manager-title">三、背后说其他同事坏话，制造团队矛盾</div>
+            <p>如上问中他对我说的怼交付那边的话，还曾在会上说"田同学和詹同学做事很差很顿"需要人盯着去执行等。
+              <span class="evidence-tag">有录音</span></p>
           </div>
 
-          <div class="manager-issue">
-            <h3 class="manager-issue-title">四、流程很多违规之处</h3>
-            <div class="case-body">
-              <p>3月19日晚绩效沟通完成后，3月20日，他派一位嫡系同学去问我带的几个外包同学，我在质检中这阶段都做了哪些工作。</p>
-              <p><strong>试问：</strong>绩效评价都给出来了，才去收集证据？这符合"先核实再评价给出绩效"的逻辑吗？</p>
-              <p>以及其和我说<em>"不会给我差绩效"</em>等迷惑下级的话。<span class="evidence-tag">有录音</span></p>
-            </div>
+          <div class="manager-item">
+            <div class="manager-title">四、流程很多违规之处</div>
+            <p>3月19日晚绩效沟通完成后，3月20日，他派一位嫡系同学去问我带的几个外包同学，我在质检中这阶段都做了哪些工作。</p>
+            <p><strong>试问：</strong>绩效评价都给出来了，才去收集证据？这符合"先核实再评价给出绩效"的逻辑吗？</p>
+            <p>以及其和我说"不会给我差绩效"等迷惑下级的话。
+              <span class="evidence-tag">有录音</span></p>
           </div>
 
-          <div class="manager-issue">
-            <h
+          <div class="manager-item">
+            <div class="manager-title">五、滥用职权，诬陷他人，纵容嫡系窃取他人成果，德&能均不配位</div>
+            <p>在一次我约他的one one沟通工作的过程当中，我提到了组内的林同学和朱同学，对于和我的工作未曾有任何交集，或者是给我工作给予过指导，我想问他年度工作总结这样写是否合理。</p>
+            <p><strong>但是他当场翻脸</strong>，说我是敏感、斤斤计较、做事有情绪、不热爱工作等。</p>
+            <p>对于他以这样PUA方式回应，对此我想问某节的文化是这样的吗？难道下级约leader进行one one沟通工作亦或者谈心聊聊工作问题同步等，都是不可以的？这样做的话问题都是员工有消极情绪不好好做事？我想某节的文化不是这样的吧。
+              <span class="evidence-tag">有录音</span></p>
+          </div>
+
+          <div class="manager-item">
+            <div class="manager-title">六、未做到坦诚清晰，违背公司文化，借

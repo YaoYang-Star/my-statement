@@ -95,22 +95,11 @@
       border-radius: 16px;
       text-align: center;
     }
-    .stat-number-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
     .stat-number {
       font-size: 36px;
       font-weight: 800;
       color: #f43f5e;
-    }
-    .stat-unit {
-      font-size: 20px;
-      font-weight: 700;
-      color: #f43f5e;
+      margin-bottom: 4px;
     }
     .stat-label { font-size: 13px; color: #94a3b8; }
     
@@ -346,34 +335,25 @@
   <main>
     <section class="hero" id="overview">
       <div class="container">
-        <div class="hero-tag">事件公开 · 实名举报</div>
-        <h1>用事实还原真相<br/>揭露<span class="highlight">职场霸凌</span>与不公</h1>
-        <p>我是某大厂的一名研发员工。今天我站出来，公开举报智能营销子部门管理人员<strong>聂松洋</strong>和<strong>李亮</strong>的恶意绩效差评、职场PUA及其他违规行为。以下内容均有完整证据支撑。</p>
+        <div class="hero-tag">事件公开 · 以此举报</div>
+        <h1>事实还原真相<br/>揭露<span class="highlight">职场霸凌</span>与不公</h1>
+        <p>我是某大厂的一名研发员工。今天我站出来，举报智能营销子部门管理人员<strong>聂松洋</strong>的绩效同步过程中的恶意差评诋毁、长期职场PUA霸凌及多项违规行为，及其上级名叫<strong>“李亮”(花名)</strong>的对其包庇纵容行为(现为其+2)。以下内容均有完整证据支撑。</p>
         <div class="hero-actions">
           <a href="#accusations" class="btn btn-primary">查看五项污蔑澄清</a>
           <a href="#contact" class="btn btn-secondary">获取完整证据</a>
         </div>
         <div class="stats">
           <div class="stat">
-            <div class="stat-number-row">
-              <div class="stat-number">5</div>
-              <div class="stat-unit">项</div>
-            </div>
-            <div class="stat-label">莫须有罪名</div>
+            <div class="stat-number">5</div>
+            <div class="stat-label">项莫须有罪名</div>
           </div>
           <div class="stat">
-            <div class="stat-number-row">
-              <div class="stat-number">7</div>
-              <div class="stat-unit">项</div>
-            </div>
-            <div class="stat-label">聂松洋违规</div>
+            <div class="stat-number">7</div>
+            <div class="stat-label">项聂松洋违规</div>
           </div>
           <div class="stat">
-            <div class="stat-number-row">
-              <div class="stat-number">3</div>
-              <div class="stat-unit">项</div>
-            </div>
-            <div class="stat-label">李亮包庇</div>
+            <div class="stat-number">3</div>
+            <div class="stat-label">项李亮包庇</div>
           </div>
           <div class="stat">
             <div class="stat-number">100%</div>
@@ -385,23 +365,23 @@
 
     <section id="who">
       <div class="container">
-        <h2 class="section-title">被举报的两位管理人员</h2>
+        <h2 class="section-title">我举报的两位管理人员</h2>
         <p class="section-subtitle">一个恶意构陷，一个包庇纵容</p>
         <div class="people-grid">
           <div class="person-card">
-            <div class="person-role">被举报人一</div>
+            <div class="person-role">投诉一</div>
             <div class="person-name">聂松洋</div>
             <p class="person-desc">原直属技术主管，负责日常管理和绩效评价。在任职期间存在多项管理违规和职场霸凌行为。</p>
           </div>
           <div class="person-card">
-            <div class="person-role">被举报人二</div>
+            <div class="person-role">投诉二</div>
             <div class="person-name">李亮</div>
             <p class="person-desc">聂松洋的上级（+2），负责申诉复议。在收到完整证据后，仍以职级压制、包庇下属，甚至威胁举报人。</p>
           </div>
         </div>
         <div class="card" style="margin-top: 20px; background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.3);">
           <strong style="color: #fde68a;">⚠️ 事件简述</strong>
-          <p style="margin-top: 10px; color: #fef3c7;">2026年3月19日晚的绩效沟通会上，聂松洋在新leader xw面前，以轻蔑的态度给了我五项完全不符合事实的负面评价。我不服，提出申诉，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
+          <p style="margin-top: 10px; color: #fef3c7;">2026年3月19日晚的绩效沟通会上，聂松洋在我的新leader xw面前，其以非常轻蔑态度，给了我五项完全不符合事实的负面评价并对我诋毁诬陷。我事后提出绩效申诉及对聂松洋的举报，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
         </div>
       </div>
     </section>
@@ -409,197 +389,228 @@
     <section id="accusations">
       <div class="container">
         <h2 class="section-title">五项莫须有罪名</h2>
-        <p class="section-subtitle">聂松洋给我扣了五顶"莫须有"的帽子，以下用证据一一澄清</p>
+        <p class="section-subtitle">在绩效沟通会上，聂松洋给我扣了五顶"莫须有"的帽子，以下用证据一一澄清</p>
 
         <div class="card">
           <div class="case-number">01</div>
-          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑一："JL项目做砸、无收益、只看结果" + "没和田同学有任何工作沟通"</h3>
-          <div class="accusation">
-            <div class="accusation-label">聂松洋的指控</div>
-            <div class="accusation-text">把项目做砸了，没有收益；并且没有和田同学有任何工作沟通，未达到预期。</div>
-          </div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑一：其表述："JL项目做砸、无收益、我只看结果" + "你没和田wr同学有任何工作沟通，未达到预期"</h3>
           <div class="clarification">
-            <div class="clarification-label">事实澄清</div>
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">事实澄清</div>
             <div style="color: #e2e8f0;">
-              <p style="margin-bottom: 12px;"><strong>项目实际情况：</strong>吉利项目收益偏低是因为合作DY平台账号限制，领导层视实际情况综合评估项目难度大，结果为<strong>收益偏低、推进难度较大，并非项目失败</strong>。</p>
-              <p style="margin-bottom: 12px;"><strong>功能提前完成：</strong>我提前一个多月就开发好了功能，是合作账号一直申请不下来，产解同学也在极力推进。</p>
-              <p style="margin-bottom: 12px;"><strong>聂松洋自己的话打脸：</strong>他多次说过"就算项目出问题了也不是你的责任，我知道过程"以及"组内谁什么样子我都清楚了，我是不会给你差绩效的"等类似话语。
-                <span class="evidence-tag">有聊天记录</span><span class="evidence-tag">有录音</span></p>
-              <p style="margin-bottom: 12px;"><strong>与田同学有大量沟通：</strong>我们不仅有分工确认——我负责AI私信，田同学做视频质检——还有大量的项目沟通记录和参会记录。
-                <span class="evidence-tag">有沟通记录</span><span class="evidence-tag">有参会记录</span></p>
-              <p><strong>时间点矛盾：</strong>如果真是我做砸了的话，为何在2025年10月份项目交付及1月上旬转正等时间节点对我提出呢？</p>
+              <p style="margin-bottom: 12px;"><strong>项目实际情况：</strong>JL项目并非做砸，实际为DY开放平台账号限制及领导层视实际情况综合评估项目难度大，结果为<strong>收益偏低、推进难度较大，并非项目失败</strong>。</p>
+                <span class="evidence-tag">本人有各合作方对jl项目的真实情况说明</span>
+              <p style="margin-bottom: 12px;"><strong>功能提前完成，我参与的项目都是尽职尽责：</strong>我提前一个多月就开发好了全部的研发模块功能，是合作的dy开放平台账号scope一直申请不下来（产解同学在过程中也在极力推进）；在整个项目过程中，对于卡点和风险点我都是及时与他汇报，以及在群里解答相关合作同学的任何问题</p>
+              <p style="margin-bottom: 12px;"><strong>聂松洋前后不一、推卸责任：</strong>他多次对我说过"就算JL项目出问题了也不是你的责任，我知道整个过程"以及"组内谁什么样我都清楚，我是不会给你差绩效的"等类似话语。<br>
+                <span class="evidence-tag">本人有所有的聊天记录</span><span class="evidence-tag">有与其one one过程的录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>我与田同学有工作协作沟通及与其确认过程：</strong>我们不仅有分工确认——我负责AI私信，田同学做视频质检——还有大量的项目沟通记录和参会记录。<br>
+                <span class="evidence-tag">有沟通记录</span><span class="evidence-tag">有所有参会记录</span><span class="evidence-tag">也有该项目初期聂松洋对任务分工情况的录音</span></p>
+              <p><strong>时间点矛盾：</strong>若是我做砸了JL项目的话，为何在2025年10月份项目交付及1月上旬我转正等关键时间节点对我提出？</p>
             </div>
+          </div>
+          <div style="margin-bottom: 10px;"></div>
+          <div class="accusation">
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">对聂松洋指控</div>
+            <div class="accusation-text">当时做JL项目期间，聂松洋是知道整个项目的卡点和我所做的工作，并在多次我俩吃饭的路上聊天及个别沟通会上说：我不会让你背绩效，你做事的态度我是知道的，也说过“JL的司内技术支持pmo那俩人(JLL/YWW)就是傻b、
+              人品有问题你该怼就怼”等类似话，我也有相关聊天记录截图说明(在此网站我暂不放截图与录音)。如今，“我只看结果，是你做砸的项目”污蔑话语，对此，其行为是诋毁诽谤、败坏他人声誉的说辞。</div>
           </div>
         </div>
 
         <div class="card">
           <div class="case-number">02</div>
-          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑二："架构设计的场景合理性存在问题"</h3>
-          <div class="accusation">
-            <div class="accusation-label">聂松洋的指控</div>
-            <div class="accusation-text">架构设计的场景合理性存在问题，是环评人员评价的，无法告知具体内容。</div>
-          </div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑二："架构设计场景合理性存在问题"</h3>
           <div class="clarification">
-            <div class="clarification-label">事实澄清</div>
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">事实澄清</div>
             <div style="color: #e2e8f0;">
-              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我问他具体是哪部分代码、哪个模块、哪个场景不合理，他根本回答不上一句，只说是"环评人员评价他无法告知，只有我新leader xw可以看到"。</p>
-              <p style="margin-bottom: 12px;"><strong>逻辑矛盾：</strong>若我架构存在不合理情况，为何项目开发全程无人提出、代码可正常评审上线？聂松洋作为技术主管也好，还是我团队中的mentor同学，从来没有提出过任何异议？这合乎常理么？</p>
-              <p><strong>主管失职：</strong>作为技术主管，对组内的技术架构不了解，平时上线没有任何建议，最后绩效时说别人反馈，这是正常流程么？只在绩效沟通时拿"他人反馈"说事，缺少有力证据，这分明是故意找茬，也是他作为主管的失职。
+              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我诉求是请提供我明确的发生的具体代码业务场景、模块、架构不合理点有哪些，本身进一步提升自己的心理向聂松洋寻求，
+                但沟通未获任何原因，他没有回答一句，而说的是"环评人员评价他无法告知，只有我新leader xw可以看到，你去问wen哥啊"。</p>
                 <span class="evidence-tag">有代码评审记录</span><span class="evidence-tag">有上线记录</span></p>
             </div>
           </div>
+          <div style="margin-bottom: 10px;"></div>
+          <div class="accusation">
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">对聂松洋指控</div>
+            <div class="accusation-text"><strong>逻辑矛盾：</strong>若我架构存在不合理情况，为何项目开发全程无人提出、代码可正常评审上线？聂松洋作为技术主管也好，还是我团队中的mentor同学，从来没有提出过任何异议？这合乎常理么？</p>
+              <p><strong>主管失职：</strong>作为技术leader，对组内的技术架构不了解，平时上线没有任何建议，最后绩效沟通时说别人反馈，这不奇怪么，是正常流程么？只在绩效沟通时拿"他人反馈"说事，缺少有力证据，这是故意找茬，也是他作为主管的失职。</div>
+          </div>
+          <p>就算是环评反馈不能公开，但是起码的证据得拿出来吧，开发的功能代码落地场景不合理之处在哪。绩效评价应该基于事实和证据。<p></p>
         </div>
 
         <div class="card">
           <div class="case-number">03</div>
-          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑三："在某个组内相关的模块中，没有承担服务owner责任"</h3>
-          <div class="accusation">
-            <div class="accusation-label">聂松洋的指控</div>
-            <div class="accusation-text">在质检模块中，没有承担服务owner责任。</div>
-          </div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑三："在某个相关服务模块中，没有承担服务Owner意识"</h3>
           <div class="clarification">
-            <div class="clarification-label">事实澄清</div>
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">事实澄清</div>
             <div style="color: #e2e8f0;">
-              <p style="margin-bottom: 12px;"><strong>从未正式官宣：</strong>聂松洋从来没有在公开场合正式官宣我是owner，一直负责质检的周某、赵某也没跟我做过交接。</p>
-              <p style="margin-bottom: 12px;"><strong>分工混乱：</strong>我多次跟周某沟通，他都表示"当前质检工作我们一起来处理"。组里其他同学都觉得分工非常混乱。
-                <span class="evidence-tag">有沟通截图</span></p>
-              <p style="margin-bottom: 12px;"><strong>我曾要求官宣：</strong>元旦前在火锅店吃饭时，我跟聂松洋确认：质检到底谁做，如果是我的话希望在会上官宣，要不很多人都不知道，但他给的回应是我和周同学一起做。
-                <span class="evidence-tag">有录音</span></p>
-              <p style="margin-bottom: 12px;"><strong>新leader来后才正式交接：</strong>直到新leader xw来后，3月9日才正式官宣我负责质检，之后赵某和杨某同学才跟我完成了交接工作。
-                <span class="evidence-tag">有会议记录</span><span class="evidence-tag">有交接截图</span></p>
-              <p><strong>挂羊头卖狗肉：</strong>在此之前，聂松洋都是要求该服务系统的开发进度都是我mentor赵某同学来同步质检进度，现在却说我一直是owner没起到作用，这不是挂羊头卖狗肉、让我当替罪羊吗？</p>
+              <p style="margin-bottom: 12px;"><strong>荒诞至极，从未官宣过我是该模块Owner：</strong>聂松洋从来没有在组内和组外的任何场合官宣过我是该服务的Owner，事实是他这大半年一直都是让我游走于各个模块给模块的Owner服务；而对于他说的该服务工作，一直负责zj服务的是周某、赵某负责，组内外的同学都知，个人也有截图为证，直到3.9日xw新leader上任后让我负责该模块官宣我为模块owner。</p>
+              <p style="margin-bottom: 12px;"><strong>分工极度混乱：</strong>我曾多次跟周某确认问zj模块他还做么，聂松洋和你说过么，他都表示"当前zj服务工作我们一起来处理吧"。组内外的其他同学都觉得分工非常混乱，因此在群里涉及到zj服务的问题都是有时@我有时@周某。</p>
+                <span class="evidence-tag">本人有所有真相和沟通截图为证</span></p>
+              <p style="margin-bottom: 12px;"><strong>我曾和聂松洋多次确认zj服务的负责人是谁：</strong>元旦前，在火锅店和聂松洋吃饭时，我和他确认：zj服务到底谁做，如果是我的话希望在会上官宣，要不很多人都不知道，还是说我和周某一起负责，他给的回应是我和周同学一起做(因为他非常讨好周同学，因为我想着他作为leader怎么安排就听他的吧别以为我抢活啥的有误会，他为啥讨好组内个别同学也都清楚我在此不进行说明)。<br>
+                <span class="evidence-tag">有该项说明录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>新leader来后才正式交接：</strong>直到新leader xw来后，3月9日才正式官宣我负责zj服务，之后赵某和周某、杨某等相关同学才跟我做了一些交接工作。<br>
+                <span class="evidence-tag">有交接会议记录、</span><span class="evidence-tag">有交接截图</span><span class="evidence-tag">也有其他组内外同学反馈分工情况说明</span></p></p>
             </div>
+          </div>
+          <div style="margin-bottom: 10px;"></div>
+          <div class="accusation">
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">对聂松洋指控</div>
+            <div class="accusation-text">赤裸裸诬陷：参与质检工作期间，是多人负责，
+              zhou某、zhao某等也一直一起参与着工作，现在聂松洋说我是该服务owner没有担起责任，实际上我这个所谓的质检Owner是“名义上的Owne”，是聂松洋的替罪羊，从未给过我名分，脏活累活都是我在干，最后沦为背锅的，我所有的one one录音中，也能看得出真正的owner而不是我。</div>
+             <p><strong>挂羊头卖狗肉：</strong>在xw新leader来之前，聂松洋都是要求zj服务在任何组内外的进度会上，相关汇报都是我的mentor赵某同学来进行的同步进度，现在却说我一直是Owner没起到作用，这不是挂羊头卖狗肉、让我当替罪羊？</p>
           </div>
         </div>
 
         <div class="card">
           <div class="case-number">04</div>
-          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑四："跨团队沟通能力需要进一步提升"</h3>
-          <div class="accusation">
-            <div class="accusation-label">聂松洋的指控</div>
-            <div class="accusation-text">跨团队沟通能力需要进一步提升，是环评反馈的，不能说。</div>
-          </div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑四：栽赃"跨团队沟通能力需要进一步提升"</h3>
           <div class="clarification">
-            <div class="clarification-label">事实澄清</div>
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">事实澄清</div>
             <div style="color: #e2e8f0;">
-              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我要求聂松洋拿出具体证据，他说是环评反馈的不能说。</p>
-              <p style="margin-bottom: 12px;"><strong>实际情况：</strong>大家看这些截图，群里@我的问题，我可以说我每次都进行积极配合与解答。产品咨询、B端的业务方提问、运营的问题，我都积极响应。
-                <span class="evidence-tag">有群聊截图</span></p>
-              <p><strong>到底是谁沟通有问题：</strong>相反，也可以看到，聂松洋经常跟我说"交付那些人像某某、某某都是傻x，办事很阴，该怼就怼"等类似话语，到底是谁沟通有问题？
-                <span class="evidence-tag">有录音</span></p>
+              <p style="margin-bottom: 12px;"><strong>拒绝提供具体证据：</strong>我要求聂松洋拿出具体证据具体事项及发生场景，他说是环评反馈的不能说。</p>
+              <p style="margin-bottom: 12px;"><strong>实际情况：</strong>本人有所有的群内沟通工作截图，群里@我的问题，可以说是我每次都进行积极配合与解答。产品咨询、合作B端的业务方提问、运营的问题，我都配合解答响应。
+                <span class="evidence-tag">本人有群聊截图</span></p>
+              <p><strong>到底是谁沟通有问题：</strong>相反，也可以看到，聂松洋经常跟我说"交付那些人像某某、某某都是傻x，办事很阴"、"组里詹某，田某干活太钝能次还次"等类似话语，多次制造下级间矛盾到底是谁沟通有问题？
+                <span class="evidence-tag">我有截图和录音为证</span></p>
             </div>
+          </div>
+          <div style="margin-bottom: 10px;"></div>
+           <div class="accusation">
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">对聂松洋指控</div>
+            <div class="accusation-text">作为leader，自己曾说参与过我的项目了解其中细节，若环评真有此项结果，其应说明影响程度和范围及类似的场景case。作为当事人和受害人我应有权知道和对质，聂松洋这是刻意制造问题，没有任何证据仅以环评结果不能公开为理由乱扣罪名，若都像其所为，那大家工作中沟通只要施加绩效者对某人不爽就可以无依据来写，其松洋该行为也不符合公司文化。</div>
           </div>
         </div>
 
         <div class="card">
           <div class="case-number">05</div>
-          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑五："个人自我内耗，影响团队和谐，不利于团队发展"</h3>
-          <div class="accusation">
-            <div class="accusation-label">聂松洋的指控</div>
-            <div class="accusation-text">个人工作带情绪，自我内耗，影响团队和谐，不利于团队发展。</div>
-          </div>
+          <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">污蔑五："自我内耗，影响团队和谐，不利于团队发展"</h3>
           <div class="clarification">
-            <div class="clarification-label">事实澄清</div>
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">事实澄清</div>
             <div style="color: #e2e8f0;">
-              <p style="margin-bottom: 12px;"><strong>无任何证据支撑：</strong>我从未收到任何具体事实与证据支撑。相反，作为技术leader，聂松洋存在欺压下属、分工极度混乱、纵容他人窃取我的劳动成果、长期对下级进行打压及画饼等行为。</p>
-              <p style="margin-bottom: 12px;"><strong>工作从未出现问题：</strong>我入职以来的几个月，多个项目并行，从来没有耽误过交付，从来没有出现过线上事故。
-                <span class="evidence-tag">有代码提交记录</span><span class="evidence-tag">有项目文档</span></p>
+              <p style="margin-bottom: 12px;"><strong>无任何证据支撑：</strong>同样，我未收到任何具体事实与证据支撑。相反，作为技术leader，聂松洋存在欺压下属、分工极度混乱、纵容他人窃取我的劳动成果、长期对下级进行打压及画饼等行为。</p>
+              <p style="margin-bottom: 12px;"><strong>工作从未出现问题：</strong>我入职以来的几个月，多个项目并行，从来没有耽误过交付，也从来没有出现过线上事故。
+                <span class="evidence-tag">有代码提交记录截图为证</span><span class="evidence-tag">有多项目文档</span></p>
               <p style="margin-bottom: 12px;"><strong>真实情况：</strong>在他下边做事的几个月当中，其都是让我游走于各个模块，给他的嫡系来做辅助。</p>
-              <p style="margin-bottom: 12px;"><strong>录音证据打脸：</strong>在1月27日的one one过程中（绩效评估周期），聂松洋说："至今为止，我没从别人那得到任何你的负面反馈"，这和现在绩效说的"环评有人说你态度有问题"明显矛盾。
+              <p style="margin-bottom: 12px;"><strong>录音证据说明：</strong>在1月27日的one one过程中（也恰巧是绩效评估周期时间节点），聂松洋说："至今为止，我没从别人那得到任何你的负面反馈"，这和现在绩效说的"环评有人说你态度有问题"明显矛盾。
                 <span class="evidence-tag">有录音</span></p>
-              <p style="margin-bottom: 12px;"><strong>私下聊天被扭曲：</strong>更过分的是，我和聂松洋私下闲聊时说的个人性格特点，比如"我是个比较在意面子的人"、"性格做事比较着急"，结果全部被他扭曲成我"内耗、影响团队发展"的标签。
+              <p style="margin-bottom: 12px;"><strong>私下聊天被扭曲：</strong>更过分的是，我和聂松洋私下闲聊时，如在吃饭时说的个人性格特点，比如"我是个比较在意面子的人"、"做事比较着急"，结果全部被他扭曲成我"内耗、影响团队发展"的标签。
                 <span class="evidence-tag">有录音</span></p>
-              <p><strong>责任心被歪曲：</strong>我承认我做事情比较着急，但这是责任心的体现！而且是因为聂松洋在工作上的安排很混乱，让我游走各个子模块，配合各个模块Owner做事，从未给过owner的名分。</p>
+              <p><strong>责任心被歪曲：</strong>我承认我做事情比较着急，但这是责任心的体现！而且是因为聂松洋在工作上的安排很混乱，让我游走各个子模块，配合各个模块Owner做事，。</p>
             </div>
           </div>
+          <div style="margin-bottom: 10px;"></div>
+          <div class="accusation">
+            <div class="clarification-label" style="font-size: 19px; font-weight: 700;">对聂松洋指控</div>
+            <div class="accusation-text">张冠李戴，乱扣罪名，绩效是以工作结果、产出、贡献等多工作维度来评，是以事实为准，而个人情感性格、无论是否内耗，在未耽误工作前提下，以此为由完全为品质问题。
+              换言之，就算本人真有内耗，那也是个人情况，和产出绩效无任何关系，这不是霸凌？</div>
+          </div>
+          <p>上述五点污蔑行为是在 3.19 日绩效沟通会上其口头所述，而在3.21日我收到的“评估结果已开通”通知，其书面给的理由是：</p>
+          <div class="quote">跨团队沟通能力还可以进一步提升，争取减少一些情绪的内耗和影响；zj和销售zs项目，可以在公共场合主动多发声，承担服务owner责任。</div>
+          <p>对此，也同样是都没有任何case说明和证据。</p>
         </div>
       </div>
     </section>
 
-    <section id="nie-issues">
+    <section id="nie-issues" style="padding-top: 8px;">
       <div class="container">
-        <h2 class="section-title">聂松洋的七项违规问题</h2>
-        <p class="section-subtitle">澄清完这五点污蔑，现在公开聂松洋的管理及违规问题</p>
-
+        <h2 class="section-title">聂松洋多项违规问题陈述</h2>
+        <p class="section-subtitle">澄清完其上述五点污蔑恶行，现在公开聂松洋的管理及多种违规行为</p>
         <div class="card">
           <div class="manager-item">
             <div class="manager-title">一、分工极度混乱</div>
-            <p>他让我一个人同时负责质检、销售助手、外呼、吉利项目，<strong>多个系统并行工作</strong>。这是组里其他同学的反馈，大家都觉得分工非常混乱。</p>
+            <p>他让我一个人同时负责ZJ、销售ZS、WL、JL项目，<strong>多个系统并行工作</strong>。下文中的链接(申诉材料)中，也有组内外其他同学的反馈截图为证，大家都觉得分工非常混乱。</p>
+            <p>在Q4中仅12天内，我的重心支援的工作的定义就从“剩余Q完整ZJ服务功能部分重构”调整为“WH数据闭环”，分工如此混乱，我的绩效却要求我承担ZJ服务owner的全部责任，
+              重点是整个过程中我都是按期要求认真完成每项任务，最后其给的评价与实际分工情况严重不符。</p>
           </div>
 
           <div class="manager-item">
             <div class="manager-title">二、拉帮结派，区别对待员工</div>
-            <p>似乎组内的老员工和家庭相对优渥的同学其特殊对待的，他曾在公众场合说：</p>
+            <p>组内的个别老员工和家庭相对优渥的同学得到其特殊对待，个别case为他曾在公众场合说：</p>
             <div class="quote">
-              "某某你定的什么酒店，肯定品味不如某某"；"某某你的打扮就是社会小伙，看看人家某某和某某，一看就是好孩子还帅"。
-            </div>
-            <p>他跟关系好的下属说："我怎么可能裁你，我裁谁都不会裁你的"；环评告诉嫡系不要写和他不对付的人，他也不会给这个嫡系邀人等话。</p>
-            <p>还有在1月27号one one中我表示某个项目的产品PRD是我出的，对于遇到的卡点我不知道怎么进行工作，他觉得我是在说那位产品异性的不好，当即和我翻脸。
+              1. "某某你定的什么酒店，品味肯定不如xing哥了"；"某某你的打扮就是社会小伙，看看人家xing哥和yijie，一看就是好孩子还帅"。
+            <p>2. 他跟关系好的下级嫡系说："我怎么可能裁你，我裁谁都不会裁你的"；环评前告诉嫡系不要邀请和他不对付的前端，他也不会给这个嫡系邀人等话。</p>
+            <p>3. yijie家可是住在迪斯尼附近的，有钱又帅，我好久没有来上海吃的你颜了。</p>
+            <p>4. 对于家庭背景相对优渥的同学对工作有问题和其交流，他的变现是安抚，说“别生气别生气”，而对于其他的一般背景或者其他的新人来说，他就说强行扣罪名。</p>
+            <p>非常之多......</p></div>
+            <p>另，在1月27号one one中我表示某个项目的产品PRD是我出的，对于遇到的卡点我不知道怎么进行工作，他觉得我是在说那位产品异性的不好，当即和我翻脸。
               <span class="evidence-tag">有录音</span></p>
           </div>
+
+          <!-- <div class="manager-item">
+            <div class="manager-title">二、德&能均不配位</div>
+            <p>在1月27号one one中我表示某个项目的产品PRD是我出的，对于遇到的卡点我不知道怎么进行工作，他觉得我是在说那位产品异性的不好，当即和我翻脸。
+              <span class="evidence-tag">有录音</span></p>
+          </div> -->
 
           <div class="manager-item">
             <div class="manager-title">三、背后说其他同事坏话，制造团队矛盾</div>
-            <p>如上问中他对我说的怼交付那边的话，还曾在会上说"田同学和詹同学做事很差很顿"需要人盯着去执行等。
-              <span class="evidence-tag">有录音</span></p>
+            <p>如上文，他对我说的怼交付那边的话，还曾在会上说"田同学和詹同学做事很差很顿"需要人盯着去执行；组里前端那点工作量，我都知道，天天下班也早；外包那些能力差的很，不骂真不行...
+              <span class="evidence-tag">均有录音为证</span></p>
           </div>
 
           <div class="manager-item">
-            <div class="manager-title">四、流程很多违规之处</div>
-            <p>3月19日晚绩效沟通完成后，3月20日，他派一位嫡系同学去问我带的几个外包同学，我在质检中这阶段都做了哪些工作。</p>
-            <p><strong>试问：</strong>绩效评价都给出来了，才去收集证据？这符合"先核实再评价给出绩效"的逻辑吗？</p>
-            <p>以及其和我说"不会给我差绩效"等迷惑下级的话。
-              <span class="evidence-tag">有录音</span></p>
+            <div class="manager-title">四、绩效沟通流程多处违规行为</div>
+            <p>3月19日晚绩效沟通完成后，3月20日白天，他派一位嫡系同学去问我带的几个外包同学，我在zj中这阶段都做了哪些工作。</p>
+            <p><strong>试问：</strong>在绩效评价给出来后，去收集证据？这符合"先核实再评价给出绩效"的逻辑吗？</p>
+            <p>以及在之前和我说"不会给我差绩效"等迷惑下级的话，和从未收到过合作方对我的任何负面反馈的话语。<br>
+              <span class="evidence-tag">具有录音为证和充足的证据</span></p>
           </div>
 
           <div class="manager-item">
-            <div class="manager-title">五、滥用职权，诬陷他人，纵容嫡系窃取他人成果，德&能均不配位</div>
-            <p>在一次我约他的one one沟通工作的过程当中，我提到了组内的林同学和朱同学，对于和我的工作未曾有任何交集，或者是给我工作给予过指导，我想问他年度工作总结这样写是否合理。</p>
-            <p><strong>但是他当场翻脸</strong>，说我是敏感、斤斤计较、做事有情绪、不热爱工作等。</p>
-            <p>对于他以这样PUA方式回应，对此我想问某节的文化是这样的吗？难道下级约leader进行one one沟通工作亦或者谈心聊聊工作问题同步等，都是不可以的？这样做的话问题都是员工有消极情绪不好好做事？我想某节的文化不是这样的吧。
-              <span class="evidence-tag">有录音</span></p>
+            <div class="manager-title">五、德&能均不配位：滥用职权，诬陷他人，纵容嫡系窃取他人成果</div>
+            <div class="quote">
+            <p>1. 在1.27日约他的one one沟通工作的过程当中，我提到了组内的两个同学，对于和我的工作未曾有任何交集，或是没给我工作给予过指导，我想问聂松洋他们年度工作总结写了我的部分这样写是否合理。</p>
+            <p><strong>但是，聂松洋的反应是当场翻脸</strong>，说我是敏感、斤斤计较、做事有情绪等标签。</p>
+            <p>2. 过程中及在此前的一个工作交流中，我表示合作的WH项目的产品PRD是我出的，对于我开发的功能遇到的卡点我不知道怎么进行工作，和既然WH的数据模块我是owner，我希望其有些会你们大家拉上我，因为有些背景我不知道直接做需求有些模糊，但都被聂松洋他解读为觉得我是在说那位异性产品的不好，
+              两次当即和我翻脸，说你让人家产品设计什么prd，这个东西大家都是不知道怎么做很抽象的东西，人家出什么prd(所以，我做了别人都觉得抽象的，锅和责任都得找个替罪羊？)。<br>
+              <span class="evidence-tag">多录音为证</span></p>
+              <p>对于聂松洋以这样PUA方式回应，对此我想问某节的文化是这样的吗？难道下级约leader进行one one沟通工作亦或者谈心聊聊工作问题同步等，都是不可以的？这样做的话问题都是员工有消极情绪不好好做事？某节的文化就是这样的么？<br>
+                至于能力，更是有目共睹，合并成果，依赖老人，个别嫡系暂且求生。<br>
+                能有这样的人在这家大厂做着这些令人发指的事情，也是让人对这所谓的大厂祛魅了<br>
+            </div>
           </div>
 
           <div class="manager-item">
-            <div class="manager-title">六、未做到坦诚清晰，违背公司文化，借题发挥诬陷</div>
-            <p>仗其是绩效施行者的身份，肆意枉为，对于员工的性格强打歪标签，和下属讨论组内其他下属的不足等问题。</p>
+            <div class="manager-title">六、违背公司文化，坦诚清晰，借题发挥诬陷</div>
+            <p>仗其是绩效施行者的身份，肆意枉为，对于员工的性格强打歪标签贴到工作上，和下属讨论组内其他下属的不足等问题，品德败坏</p>
           </div>
 
           <div class="manager-item">
             <div class="manager-title">七、公众场合泄露内部信息</div>
-            <p>他在公众场合公开管理层的竞业和姓名信息，这些事其经常做。</p>
+            <p>他在公众场合公开管理层的竞业和姓名信息，以及讨论公司内部其他高层的期权等，这些事其经常做。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="liang-issues">
+    <section id="liang-issues" style="padding-top: 4px;">
       <div class="container">
         <h2 class="section-title">李亮的包庇与不当行为</h2>
-        <p class="section-subtitle">对于这些恶意差评，我当然不服，提出申诉，但结果让人心寒</p>
+        <p class="section-subtitle">对于这些恶意差评，我当然不服，提出申诉和举报聂松洋，但结果让人心寒</p>
 
         <div class="card">
           <div class="case-number">01</div>
           <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">以职级压制，不看证据，主观臆断</h3>
-          <p>在三个人的线下沟通会上，李亮非常强势。他认为什么是有价值的、什么是产出多的，衡量标准说白了是他来决定的，<strong>没有道理可讲，没有公平可言</strong>。</p>
-          <p>他没有结合上下文，就直接以主观来看对我的看法，打上一些标签。</p>
-          <p><strong>全程以职级压制</strong>，他也没有看我的资料——因为可能会占用他的时间。而如果真能进行复议的话，这是应该会占据他的时间和进行重新review的吧。</p>
+          <p>在3.27日，我、“李亮”、hrbp三人的线下沟通会上，我复议的内容文本写的为：<p>
+            <div class="quote">1. 核实本次绩效反馈对话过程中的全部不实负面评价，并要求聂松洋对我书面版的负面评价给出case理由; 2.对评价人聂松洋不实评价、恶意诋毁员工、诬陷、违纪等行为进行调查处理，对其进行投诉。</div>
+          <p>李亮非常强势。他表达的是他认为什么是有价值的、什么是产出多的，衡量标准说白了是他来决定的，<strong>没有道理可讲，没有公平可言</strong>。</p>
+          <p>他没有结合上下文，就直接以主观来看对我的看法，说聂和团队同学反馈我产出少，对我打上标签，而李亮你找的核实的人聂松洋和他的两个嫡系。</p>
+          <p><strong>全程以职级压制</strong>，他也没有看我的资料——我在讲的时候，他表示你快点别耽误时间对我施压，因为复议会占用他的时间。而如果真能复议成功的话，是需要重新review的我的工作成果，同时也是对他之前判定结果的挑战。</p>
         </div>
 
         <div class="card">
           <div class="case-number">02</div>
           <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">将证据称为"主观表达"，PUA举报人</h3>
-          <p>更可笑的是，我拿出这么多证据证明我的清白，李亮却说这些都是我的<strong>"主观表达"</strong>，还PUA我说：</p>
+          可笑的是，我拿出这么多证据证明我的清白，而李亮却说这些都是我的<strong>"主观表达"</strong>，还PUA我说：</p>
           <div class="quote">"想扭转我对你的看法，想翻盘，那你下次评绩效的时候证明给我看"</div>
-          <p>我想问问李亮：对于你的下级聂松洋种种恶行——甩锅、推诿、拉帮结派、纵容下级窃取成果、光明正大的欺压人、背后说人坏话——这些是什么行为性质？难道不影响团队吗？他的这些罪责行为，在你那里是默许的吗？</p>
+          <p>我想问问你李亮，对于你的下级聂松洋种种恶行——甩锅、推诿、拉帮结派、纵容下级窃取成果、光明正大的欺压人、背后说人坏话——这些是什么行为性质？难道不影响团队吗？他的这些罪责行为，在你那里是默许的？</p>
         </div>
 
         <div class="card">
           <div class="case-number">03</div>
           <h3 style="font-size: 20px; margin-bottom: 16px; font-weight: 700;">威胁举报人，禁止"被吃瓜"</h3>
-          <p>最后，他甚至威胁我：</p>
+          <p>最后，甚至威胁我：</p>
           <div class="quote">"你写的这个复议材料如果被其他人知道，被人吃瓜，我是绝对不允许的"</div>
           <p><strong>试问：</strong>这是一个管理人员应该说的话吗？受害者想要维权，反而被威胁？</p>
+          <p>在4.20日，才收到李亮的复议通知：“维持原先的绩效”。 -呵，好强的官威！</p>
         </div>
       </div>
     </section>
@@ -607,60 +618,56 @@
     <section id="why-recording">
       <div class="container">
         <h2 class="section-title">关于录音材料的说明</h2>
-        <p class="section-subtitle">为什么会有录音？</p>
         <div class="card" style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.3);">
           <strong style="color: #fde68a;">📢 重要说明</strong>
-          <p style="margin-top: 10px; color: #fef3c7;">本页面仅展示了部分文字内容。实际上，本人有完整的录音材料，其中记录了聂松洋的上述管理问题和违纪行为的详细过程，以及李亮在复议过程中的不当言论。</p>
+          <p style="margin-top: 10px; color: #fef3c7;">本页面仅展示了部分文字内容。而本人有完整的录音材料，其中记录了聂松洋的上述管理问题和违纪行为的详细过程，及绩效沟通过程中其说的所有话。</p>
         </div>
         <div class="card">
-          <p><strong>为什么会有录音？</strong></p>
-          <p style="margin-top: 12px;">说实话，将心比心，一开始7月份时有录音，我是想快速上手业务，在会后复听学习。但到了10月份，通过他之前所在的公司的朋友提醒小心其为人，加上当时吉利项目推进困难，我担心聂松洋最后前后不一、诿过推责。我当时半信半疑，<strong>出于保护自己的心理</strong>，才在后续每次一对一沟通中都录了音。</p>
-          <p style="margin-top: 12px;">如果你感觉到你的上级在给你挖坑，你会不会也想留个证据保护自己？</p>
-          <p style="margin-top: 12px; color: #94a3b8;">（注：后续李亮在复议时，把我录音保护自己的行为也说成是我的问题——"给同事录音"）</p>
+          <p><strong>为什么我会有录音？</strong></p>
+          <p style="margin-top: 12px;">说实话，将心比心，生活是这样，我认为工作也是如此，大家最好都是目标一致把事情做好，坦诚相待，如果遇到阴险之人，那么录音也是保护自己的一种方式。
+            一开始，刚入职7月份时有一份录音，我当时是想快速上手业务，在会后复听学习一些业务内容；而到了10月份，通过nsy他之前所在的公司的朋友提醒小心其为人，加上当时吉利项目当时推进困难，我担心聂松洋最后前后不一、诿过推责。我当时半信半疑，<strong>出于保护自己的心理</strong>，才在后续每次一对一沟通中都进行了录音。</p>
+          <p style="margin-top: 12px;">我想说的是，如果你感觉到你的上级在给你挖坑，你会不会也想留个证据保护自己？</p>
+          <p style="margin-top: 12px; color: #94a3b8;">（注：在复议会上时，李亮因我有录音的行为，也可以说成是我的问题——"给同事录音，你是什么心理，没见过你这种"。
+            对于他的施压我当时考虑在一个团队没有顶撞，我想说我还也是真没见过你们这种，也是，像聂松洋那样论各方面都不配位的且充满自信的研发人员，也真是开眼界）</p>
         </div>
       </div>
     </section>
 
     <section id="timeline">
       <div class="container">
-        <h2 class="section-title">事件完整时间线</h2>
+        <h2 class="section-title">我在这个部门经历的事件大体时间线</h2>
         <p class="section-subtitle">从头梳理整个事件的经过</p>
         <div class="card">
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-date">2025年7月</div>
               <div class="timeline-title">入职</div>
-              <div class="timeline-desc">入职某大厂火山智能营销部门，开始参与吉利新媒体二期AI私信项目后端开发。</div>
+              <div class="timeline-desc">入职某大厂智能营销部门，开始参与JL新媒体二期XX项目后端开发。</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2025年10月</div>
-              <div class="timeline-title">同步负责质检工作</div>
-              <div class="timeline-desc">10月22日起，同步负责质检工作（与周某共同参与+配合）、销售助手相关产品需求开发。出于保护自己的心理，开始在每次one one时录音。</div>
+              <div class="timeline-title">应聂松洋要求，同步做一部分负责ZJ工作</div>
+              <div class="timeline-desc">10月22日起，同步负责ZJ工作（与周某共同参与+配合）、销售ZS相关产品需求开发。</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2025年11月</div>
-              <div class="timeline-title">承接外呼项目</div>
-              <div class="timeline-desc">11月12日起，告知主要核心承接外呼项目的数据闭环建设相关工作。</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2025年12月</div>
-              <div class="timeline-title">要求官宣质检owner</div>
-              <div class="timeline-desc">元旦前与聂松洋在火锅店吃饭，再次确认质检到底谁做，如果是我的话希望在会上官宣，但他给的回应是我和周同学一起做。</div>
+              <div class="timeline-title">承接WH项目</div>
+              <div class="timeline-desc">11月12日起，聂松洋告知主要核心承接WH项目的数据闭环建设相关工作，ZJ交于周某和外包做。</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2026年1月</div>
               <div class="timeline-title">试用期转正</div>
-              <div class="timeline-desc">1月8日试用期转正。1月27日，聂松洋在one one中说："至今为止，我没从别人那得到任何你的负面反馈"。</div>
+              <div class="timeline-desc">1月中，试用期转正。1月27日，聂松洋在one one中说："至今为止，我没从别人那得到任何你的负面反馈"。</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2026年2月</div>
               <div class="timeline-title">直属上级调整</div>
-              <div class="timeline-desc">2月11日前，聂松洋为直属汇报上级，之后调整为xw。</div>
+              <div class="timeline-desc">2月11日前，聂松洋为直属汇报上级，之后调整为xw，但组织架构还为更改。</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2026年3月</div>
               <div class="timeline-title">绩效沟通与申诉</div>
-              <div class="timeline-desc">3月6日xw正式官宣我为质检owner。3月19日绩效沟通，收到五项与事实不符的评价。3月20日，聂松洋派嫡系同学去问外包同学我都做了哪些工作。之后向李亮申诉，遭到压制和威胁。</div>
+              <div class="timeline-desc">3月9日架构调整，+1变为xw，其在业务会上，正式官宣我为ZJ服务Owner。3月19日绩效沟通，收到多项与事实不符的评价。3月20日，聂松洋派嫡系同学去问外包同学我都做了哪些工作。之后向李亮申诉，遭到压制。</div>
             </div>
           </div>
         </div>
@@ -670,7 +677,6 @@
     <section id="public-statement">
       <div class="container">
         <h2 class="section-title">我为什么站出来？</h2>
-        <p class="section-subtitle">不是为了我一个人，而是为了更多的打工人</p>
         <div class="card" style="margin-bottom: 20px; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
           <strong style="color: #fca5a5;">⚠️ 重要警告</strong>
           <p style="margin-top: 10px; color: #fee2e2;">这个组社招招人进去就是背绩效和接锅的！</p>
@@ -694,14 +700,14 @@
               <div class="tip-desc">有些管理者，随意给你扣帽子，PUA你否定你</div>
             </div>
           </div>
-          <p style="margin-top: 28px;">甚至当你想维权申诉证明自己清白的时候，得到的更多的PUA，那种打工人的无力感也不用多说了。</p>
+          <p style="margin-top: 28px;">甚至当你想维权申诉证明自己清白的时候，得到的更多的PUA，那种打工人的无力感也不用多说。</p>
           <p>我手里有所有聊天记录、有录音，这些都是证据。</p>
           <p><strong>我想问问这家公司：</strong>你们的文化就是这样的吗？绩效评价不看事实，看的是管理者的心情？后续员工申诉维权，得到的是威胁和压制？</p>
         </div>
       </div>
     </section>
 
-    <section id="advice">
+    <section id="advice" style="padding-top: 4px;">
       <div class="container">
         <h2 class="section-title">给打工人的建议</h2>
         <p class="section-subtitle">保护好自己，勇敢发声</p>
@@ -724,8 +730,10 @@
               <div class="tip-desc">你要相信自己的价值，不要被他人的否定所左右</div>
             </div>
           </div>
-          <p style="margin-top: 28px;">我的维权之路还在继续，但我不后悔。因为我知道，如果我今天沉默了，明天还会有更多的打工人遭遇同样的事情，以及像聂松洋这样的管理者会更加猖獗。</p>
-          <p>谢谢大家看完。如果你们有类似的经历，欢迎一起交流。我们一起，为打工人的权益发声。</p>
+          <p style="margin-top: 28px;">本人复议材料及证据文档见：<a href="https://my.feishu.cn/wiki/Bm7GwCZ8tihqi9kRoz1cGKAon1S" target="_blank" rel="noopener noreferrer" style="color: #f43f5e; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">复议材料</a>，详细的录音文件请添加微信联系。</p>
+          <p style="margin-top: 28px; font-weight: 700; color: #fda4af;">
+            ⚠️ 在此声明，对于复议文档及录音材料，均已做脱敏及音效处理
+          </p>
         </div>
       </div>
     </section>

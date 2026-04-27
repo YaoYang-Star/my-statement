@@ -10,8 +10,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      background: #f8fafc;
+      color: #1e293b;
       line-height: 1.7;
     }
     a { color: inherit; text-decoration: none; }
@@ -20,42 +20,43 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(248, 250, 252, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
     .nav {
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 0;
     }
     .logo { font-weight: 800; font-size: 18px; letter-spacing: 0.5px; }
-    .logo span { color: #f43f5e; }
-    .nav-links { display: flex; gap: 24px; font-size: 14px; color: #94a3b8; }
-    .nav-links a:hover { color: #fff; }
+    .logo span { color: #dc2626; }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; color: #64748b; }
+    .nav-links a:hover { color: #0f172a; }
     
     /* Hero */
     .hero { padding: 80px 0 60px; }
     .hero-tag {
       display: inline-block;
-      background: rgba(244, 63, 94, 0.15);
-      color: #fda4af;
+      background: rgba(220, 38, 38, 0.08);
+      color: #991b1b;
       padding: 6px 14px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 20px;
-      border: 1px solid rgba(244, 63, 94, 0.3);
+      border: 1px solid rgba(220, 38, 38, 0.15);
     }
     .hero h1 {
       font-size: clamp(36px, 6vw, 52px);
       line-height: 1.1;
       margin-bottom: 20px;
       font-weight: 800;
+      color: #0f172a;
     }
-    .hero h1 .highlight { color: #f43f5e; }
+    .hero h1 .highlight { color: #dc2626; }
     .hero p {
       font-size: 18px;
-      color: #94a3b8;
+      color: #64748b;
       max-width: 640px;
       margin-bottom: 32px;
     }
@@ -70,16 +71,16 @@
       transition: all 0.2s;
     }
     .btn-primary {
-      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+      background: linear-gradient(135deg, #dc2626 0%, #be185d 100%);
       color: white;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244, 63, 94, 0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(220, 38, 38, 0.25); }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.05);
+      color: #0f172a;
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+    .btn-secondary:hover { background: rgba(0, 0, 0, 0.08); }
     
     /* Stats */
     .stats {
@@ -89,8 +90,8 @@
       margin-top: 48px;
     }
     .stat {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
       padding: 24px;
       border-radius: 16px;
       text-align: center;
@@ -98,10 +99,10 @@
     .stat-number {
       font-size: 36px;
       font-weight: 800;
-      color: #f43f5e;
+      color: #dc2626;
       margin-bottom: 4px;
     }
-    .stat-label { font-size: 13px; color: #94a3b8; }
+    .stat-label { font-size: 13px; color: #64748b; }
     
     /* Section */
     section { padding: 60px 0; }
@@ -109,17 +110,18 @@
       font-size: 28px;
       font-weight: 800;
       margin-bottom: 12px;
+      color: #0f172a;
     }
     .section-subtitle {
-      color: #94a3b8;
+      color: #64748b;
       margin-bottom: 32px;
       font-size: 15px;
     }
     
     /* Card */
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: 16px;
       padding: 32px;
       margin-bottom: 20px;
@@ -132,14 +134,14 @@
       gap: 16px;
     }
     .person-card {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
-      border: 1px solid rgba(244, 63, 94, 0.25);
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.06) 0%, rgba(255, 255, 255, 1) 100%);
+      border: 1px solid rgba(220, 38, 38, 0.15);
       border-radius: 16px;
       padding: 28px;
     }
     .person-role {
       font-size: 13px;
-      color: #fda4af;
+      color: #991b1b;
       font-weight: 600;
       margin-bottom: 8px;
     }
@@ -147,36 +149,37 @@
       font-size: 28px;
       font-weight: 800;
       margin-bottom: 12px;
+      color: #0f172a;
     }
-    .person-desc { color: #94a3b8; font-size: 14px; }
+    .person-desc { color: #64748b; font-size: 14px; }
     
     /* Accusation */
     .accusation {
-      background: rgba(244, 63, 94, 0.1);
-      border: 1px solid rgba(244, 63, 94, 0.3);
+      background: rgba(220, 38, 38, 0.06);
+      border: 1px solid rgba(220, 38, 38, 0.15);
       border-radius: 12px;
       padding: 20px 24px;
       margin-bottom: 16px;
     }
     .accusation-label {
       font-size: 12px;
-      color: #fda4af;
+      color: #991b1b;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 8px;
     }
-    .accusation-text { font-weight: 500; }
+    .accusation-text { font-weight: 500; color: #1e293b; }
     
     .clarification {
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
       border-radius: 12px;
       padding: 24px;
     }
     .clarification-label {
       font-size: 12px;
-      color: #86efac;
+      color: #065f46;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -189,8 +192,8 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: rgba(244, 63, 94, 0.2);
-      color: #f43f5e;
+      background: rgba(220, 38, 38, 0.12);
+      color: #dc2626;
       border-radius: 10px;
       font-weight: 800;
       margin-bottom: 16px;
@@ -198,8 +201,8 @@
     
     .evidence-tag {
       display: inline-block;
-      background: rgba(59, 130, 246, 0.2);
-      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.12);
+      color: #1d4ed8;
       padding: 4px 10px;
       border-radius: 999px;
       font-size: 12px;
@@ -209,7 +212,7 @@
     }
     
     .quote {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.03);
       border-left: 4px solid #3b82f6;
       padding: 18px 22px;
       border-radius: 0 12px 12px 0;
@@ -217,7 +220,7 @@
     }
     
     .manager-item {
-      border-left: 3px solid #f43f5e;
+      border-left: 3px solid #dc2626;
       padding-left: 20px;
       margin-bottom: 28px;
     }
@@ -225,6 +228,7 @@
       font-size: 18px;
       font-weight: 700;
       margin-bottom: 10px;
+      color: #0f172a;
     }
     
     .timeline { position: relative; padding-left: 36px; }
@@ -235,7 +239,7 @@
       top: 6px;
       bottom: 6px;
       width: 2px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.1);
     }
     .timeline-item {
       position: relative;
@@ -249,12 +253,12 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: #0f172a;
-      border: 2px solid #f43f5e;
+      background: #f8fafc;
+      border: 2px solid #dc2626;
     }
     .timeline-date {
       font-size: 13px;
-      color: #94a3b8;
+      color: #64748b;
       font-weight: 600;
       margin-bottom: 4px;
     }
@@ -262,8 +266,9 @@
       font-size: 17px;
       font-weight: 600;
       margin-bottom: 6px;
+      color: #0f172a;
     }
-    .timeline-desc { color: #94a3b8; font-size: 14px; }
+    .timeline-desc { color: #64748b; font-size: 14px; }
     
     .tips-grid {
       display: grid;
@@ -272,18 +277,18 @@
       margin-top: 24px;
     }
     .tip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
       padding: 24px;
       border-radius: 14px;
     }
     .tip-icon { font-size: 32px; margin-bottom: 12px; }
-    .tip-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .tip-desc { color: #94a3b8; font-size: 14px; }
+    .tip-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+    .tip-desc { color: #64748b; font-size: 14px; }
     
     .contact-box {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-      border: 1px solid rgba(244, 63, 94, 0.35);
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(255, 255, 255, 1) 100%);
+      border: 1px solid rgba(220, 38, 38, 0.15);
       border-radius: 16px;
       padding: 36px;
       text-align: center;
@@ -291,7 +296,7 @@
     .wechat {
       font-size: 42px;
       font-weight: 800;
-      color: #f43f5e;
+      color: #dc2626;
       margin-top: 16px;
       letter-spacing: 2px;
     }
@@ -301,7 +306,7 @@
       padding: 40px 20px;
       color: #64748b;
       font-size: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
       margin-top: 40px;
     }
     
@@ -380,8 +385,8 @@
           </div>
         </div>
         <div class="card" style="margin-top: 20px; background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.3);">
-          <strong style="color: #fde68a;">⚠️ 事件简述</strong>
-          <p style="margin-top: 10px; color: #fef3c7;">2026年3月19日晚的绩效沟通会上，聂松洋在我的新leader xw面前，其以非常轻蔑态度，给了我五项完全不符合事实的负面评价并对我诋毁诬陷。我事后提出绩效申诉及对聂松洋的举报，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
+          <strong style="color: #92400e;">⚠️ 事件简述</strong>
+          <p style="margin-top: 10px; color: #78350f;">2026年3月19日晚的绩效沟通会上，聂松洋在我的新leader xw面前，其以非常轻蔑态度，给了我五项完全不符合事实的负面评价并对我诋毁诬陷。我事后提出绩效申诉及对聂松洋的举报，但李亮作为复议负责人，不仅不核查事实，反而以职级压制，甚至威胁我不要把事情闹大。</p>
         </div>
       </div>
     </section>
@@ -619,8 +624,8 @@
       <div class="container">
         <h2 class="section-title">关于录音材料的说明</h2>
         <div class="card" style="background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.3);">
-          <strong style="color: #fde68a;">📢 重要说明</strong>
-          <p style="margin-top: 10px; color: #fef3c7;">本页面仅展示了部分文字内容。而本人有完整的录音材料，其中记录了聂松洋的上述管理问题和违纪行为的详细过程，及绩效沟通过程中其说的所有话。</p>
+          <strong style="color: #92400e;">📢 重要说明</strong>
+          <p style="margin-top: 10px; color: #78350f;">本页面仅展示了部分文字内容。而本人有完整的录音材料，其中记录了聂松洋的上述管理问题和违纪行为的详细过程，及绩效沟通过程中其说的所有话。</p>
         </div>
         <div class="card">
           <p><strong>为什么我会有录音？</strong></p>
@@ -678,10 +683,8 @@
       <div class="container">
         <h2 class="section-title">我为什么站出来？</h2>
         <div class="card" style="margin-bottom: 20px; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
-          <strong style="color: #fca5a5;">⚠️ 重要提醒</strong>
-          <p style="margin-top: 10px; color: #fee2e2;">聂松洋他社招招人进去就是背绩效和接锅的！
-            入职前骗你来做的业务多么厉害，做大模型能拿到各种收益，“你在其他公司和xx比不了，来后是截然相反的”
-          </p>
+          <strong style="color: #991b1b;">⚠️ 重要警告</strong>
+          <p style="margin-top: 10px; color: #7f1d1d;">这个组社招招人进去就是背绩效和接锅的！</p>
         </div>
         <div class="card">
           <p>今天我站出来，不是为了我一个人。我是想让大家看到：</p>
